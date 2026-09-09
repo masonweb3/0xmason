@@ -39,3 +39,5 @@ jobs:
         run: node scripts/wait-for-production.mjs
       - name: Verify public routes and access boundaries
         run: node scripts/smoke-site.mjs https://0xmason.com
+      - name: Crawl sitemap, metadata, structured data, redirects and CDN images
+        run: python3 scripts/check-seo.py https://0xmason.com

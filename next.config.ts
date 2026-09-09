@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import { withPayload } from "@payloadcms/next/withPayload";
 import assets from './content/cdn-assets.json';
+import { isIndexingEnabled } from './src/lib/site';
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
@@ -13,7 +14,14 @@ const nextConfig: NextConfig = {
   turbopack: { root: process.cwd() },
   async headers() {
     const revision = process.env.VERCEL_GIT_COMMIT_SHA;
-    return revision && /^[a-f0-9]{40}$/.test(revision) ? [{ source: '/:path*', headers: [{ key: 'X-Site-Revision', value: revision }] }] : [];
+    const noindex = [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }];
+    return [
+      ...(revision && /^[a-f0-9]{40}$/.test(revision) ? [{ source: '/:path*', headers: [{ key: 'X-Site-Revision', value: revision }] }] : []),
+      ...(!isIndexingEnabled() ? [{ source: '/:path*', headers: noindex }] : [
+        ...['/admin/:path*', '/api/:path*', '/preview/:path*'].map((source) => ({ source, headers: noindex })),
+        { source: '/:path*', has: [{ type: 'host' as const, value: '.*\\.vercel\\.app' }], headers: noindex },
+      ]),
+    ];
   },
   async redirects() {
     return [{

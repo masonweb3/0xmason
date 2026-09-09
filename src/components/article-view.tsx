@@ -21,12 +21,12 @@ export function ArticleView({ article, category, preview = false }: { article: R
   return <main id="main-content" className="article-page">
     {preview ? <aside className="preview-banner">文章预览 · 仅管理员可见 <Link href={`/admin/collections/articles/${article.id}`}>返回编辑</Link></aside> : <>
       <StructuredData value={breadcrumbs([{ name: '首页', path: '/' }, { name: '精选资源', path: '/resources' }, { name: category.title, path: directoryHref }, { name: article.title, path: resourceHref(article) }])} />
-      <StructuredData value={{ '@context': 'https://schema.org', '@type': 'BlogPosting', headline: article.title, description: article.seoDescription, inLanguage: 'zh-CN', mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(resourceHref(article)) }, image: [absoluteUrl(article.shareImage)], dateModified: article.updatedAt, author: { '@type': 'Person', name: site.name, url: site.url }, publisher: { '@type': 'Person', name: site.name, url: site.url }, isAccessibleForFree: true, articleSection: category.title }} />
+      <StructuredData value={{ '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': `${absoluteUrl(resourceHref(article))}#article`, headline: article.title, description: article.seoDescription, inLanguage: 'zh-CN', mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(resourceHref(article)) }, image: [...new Set([article.shareImage.src, ...(article.cover ? [article.cover.src] : [])])], dateModified: article.updatedAt, author: { '@type': 'Person', '@id': `${site.url}/#person`, name: site.name, url: site.url, sameAs: [site.social] }, publisher: { '@type': 'Person', '@id': `${site.url}/#person`, name: site.name, url: site.url }, isAccessibleForFree: true, articleSection: category.title }} />
     </>}
     <Link href={directoryHref} className="back-link"><ArrowLeft size={18} aria-hidden="true" />{category.title}</Link>
     <header className="article-header">
       <h1>{article.title}</h1><p className="article-summary">{article.summary}</p>
-      <div className="article-meta"><span className="article-author"><Image src={assetUrl('images/avatar.png')} width={32} height={32} alt="" sizes="32px" />Mason</span>{month && <time dateTime={article.recordedAt}>{month}</time>}<span>约 {content.readingMinutes} 分钟</span></div>
+      <div className="article-meta"><span className="article-author"><Image src={assetUrl('images/avatar.png')} width={32} height={32} alt="" sizes="32px" />Mason</span>{month && <time dateTime={article.recordedAt}>记录于 {month}</time>}<span>约 {content.readingMinutes} 分钟</span><time dateTime={article.updatedAt}>更新于 {new Intl.DateTimeFormat('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(article.updatedAt))}</time></div>
     </header>
     <div className="article-layout">
     <div className="article-reading">
