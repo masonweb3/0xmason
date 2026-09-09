@@ -1,0 +1,41 @@
+name: Verify deployment
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+  statuses: read
+
+concurrency:
+  group: production-verification
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Verify Vercel production
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+      - name: Wait for Vercel to release the checked commit
+        env:
+          EXPECTED_REVISION: ${{ github.event.workflow_run.head_sha }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/wait-for-production.mjs
+      - name: Verify public routes and access boundaries
+        run: node scripts/smoke-site.mjs https://0xmason.com

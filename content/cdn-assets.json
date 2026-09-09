@@ -1,0 +1,1138 @@
+{
+  "apple-icon.png": {
+    "key": "site/apple-icon.7d2310714b7d2abb.png",
+    "sha256": "7d2310714b7d2abbead22e177db959a49398088f563265b8e7a0c6ee547572de",
+    "bytes": 2856,
+    "contentType": "image/png",
+    "width": 180,
+    "height": 180
+  },
+  "favicon.ico": {
+    "key": "site/favicon.2821c4d0fa790103.ico",
+    "sha256": "2821c4d0fa79010386842d5030373577180324dba3c5907c44175718d9fcdc41",
+    "bytes": 1585,
+    "contentType": "image/x-icon",
+    "width": 48,
+    "height": 48
+  },
+  "icon.png": {
+    "key": "site/icon.ea528b2ddf59cc94-48w.webp",
+    "sha256": "ea528b2ddf59cc9455126d89c8ceafe146d0d02c7f2a61f4e73df98100806c8e",
+    "bytes": 446,
+    "contentType": "image/webp",
+    "width": 48,
+    "height": 48,
+    "variants": [],
+    "sourceSha256": "7b52a16798a5f3ad0c9cceb6a2473335809ee7d5437ec9231d1192868eedd8e1",
+    "compressionVersion": "webp-1"
+  },
+  "icons/icon-192.png": {
+    "key": "site/icons/icon-192.2678fc1bb71ed18a-192w.webp",
+    "sha256": "2678fc1bb71ed18a24a47965499dadc75d870dc4f7b61ff13a11423a0965a7e3",
+    "bytes": 1000,
+    "contentType": "image/webp",
+    "width": 192,
+    "height": 192,
+    "variants": [],
+    "sourceSha256": "598c8559cffd8f29eb25fda356ba11d6654328a4a5b20306639187e203319f33",
+    "compressionVersion": "webp-1"
+  },
+  "icons/icon-512.png": {
+    "key": "site/icons/icon-512.e9c8e6e94e30ffef-512w.webp",
+    "sha256": "e9c8e6e94e30ffef8ac4b6eaa6b18326d030eecda7d55728e1207e79700c71c4",
+    "bytes": 2516,
+    "contentType": "image/webp",
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "key": "site/icons/icon-512.3be0274cc4c863e9-320w.webp",
+        "sha256": "3be0274cc4c863e9fc867f089750964fc19dd37ca3f702d5f41f4c305683e44c",
+        "bytes": 1638,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 320
+      }
+    ],
+    "sourceSha256": "632ec5546bb0f6ff73d12c7f889752a8d2c73f5d6c49285bc039cfdc9b3768ad",
+    "compressionVersion": "webp-1"
+  },
+  "images/articles/bybit-eu/2026-09-08_bybit_eu_cover_2000x800.png": {
+    "key": "media/2026-09-08_bybit_eu_cover_2000x800-10730c166b53687c.webp",
+    "sha256": "10730c166b53687ce1d39173ce4d40e9a056f1bf1f98eaf8f942542c677f4ac2",
+    "bytes": 155680,
+    "contentType": "image/webp",
+    "width": 1920,
+    "height": 768,
+    "sourceSha256": "9e9b373b60983d0e87af852b7c3e0ab00255860a540ee4f51c7ca26962e9a7f4",
+    "compressionVersion": "webp-1",
+    "variants": [
+      {
+        "key": "media/2026-09-08_bybit_eu_cover_2000x800-10730c166b53687c-320x128.webp",
+        "sha256": "f6e22d565025f6bf9e78babcdf3c40dcf728de828fcb90d06becfb8cbe1c1d53",
+        "bytes": 9006,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 128
+      },
+      {
+        "key": "media/2026-09-08_bybit_eu_cover_2000x800-10730c166b53687c-640x256.webp",
+        "sha256": "a354c96b7a5b4e9acfce8674cea38b8ca6ab85b76c4c5fc5e579a1cbd30fb362",
+        "bytes": 23484,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 256
+      },
+      {
+        "key": "media/2026-09-08_bybit_eu_cover_2000x800-10730c166b53687c-960x384.webp",
+        "sha256": "d99258ea7c63c816c2fe0c77f6c7c8d11a8b5455849840a8fec8785fbfd49e86",
+        "bytes": 41304,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 384
+      },
+      {
+        "key": "media/2026-09-08_bybit_eu_cover_2000x800-10730c166b53687c-1280x512.webp",
+        "sha256": "20fd1c21dcb8120feab5f60f69e0b50a2573a69dfc01416384d0b56b23cb674d",
+        "bytes": 73174,
+        "contentType": "image/webp",
+        "width": 1280,
+        "height": 512
+      }
+    ]
+  },
+  "images/articles/bybit-eu/bybit_card_virtual_activated.png": {
+    "key": "media/bybit_card_virtual_activated-6dc9f761e7d97c27.webp",
+    "sha256": "6dc9f761e7d97c27ed2078a5ab138d85da9c4c8e4232c8a1cd404abff788b852",
+    "bytes": 19194,
+    "contentType": "image/webp",
+    "width": 581,
+    "height": 868,
+    "sourceSha256": "d38fe9acb411e487d4bd8010c0f7091ed772915f8bf0deb2f39063b5eac8b2e5",
+    "compressionVersion": "webp-1",
+    "variants": [
+      {
+        "key": "media/bybit_card_virtual_activated-6dc9f761e7d97c27-320x478.webp",
+        "sha256": "bb0dcf20190b0e1db5312fdb8cfcdf95586a932c6e7a3d1486ed70465308bbde",
+        "bytes": 8958,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 478
+      }
+    ]
+  },
+  "images/articles/bybit-eu/bybit_chatgpt_pro_checkout.png": {
+    "key": "media/bybit_chatgpt_pro_checkout-2e5b424919719c19.webp",
+    "sha256": "2e5b424919719c193780df14e78a7e1c4956d38ab26e589dd13592ed7bcc527d",
+    "bytes": 76482,
+    "contentType": "image/webp",
+    "width": 1920,
+    "height": 1438,
+    "sourceSha256": "66a05372c8b9504b4cac84d86df520991aab2df704bc54c511796e897c17719e",
+    "compressionVersion": "webp-1",
+    "variants": [
+      {
+        "key": "media/bybit_chatgpt_pro_checkout-2e5b424919719c19-320x240.webp",
+        "sha256": "7e022f393d0a5a4f4fd685e0df1f78f466df79880a77d75206f8d54e9ac82be2",
+        "bytes": 5650,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "key": "media/bybit_chatgpt_pro_checkout-2e5b424919719c19-640x479.webp",
+        "sha256": "835651c0be5648d8dd260e5cef8f824702aabe878fb9fee2f6887257feb49e71",
+        "bytes": 16910,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 479
+      },
+      {
+        "key": "media/bybit_chatgpt_pro_checkout-2e5b424919719c19-960x719.webp",
+        "sha256": "e09a3e508b862c6a3349046ca22abe7b8f0014c9b431300cca14ccc87e22c169",
+        "bytes": 31358,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 719
+      },
+      {
+        "key": "media/bybit_chatgpt_pro_checkout-2e5b424919719c19-1280x959.webp",
+        "sha256": "e2bd2842c55334f3c96837c4d7bec26aecca67dcfd22f1ce97fb7dafcb94b789",
+        "bytes": 46048,
+        "contentType": "image/webp",
+        "width": 1280,
+        "height": 959
+      }
+    ]
+  },
+  "images/articles/bybit-eu/bybit_eu_appstore_search.png": {
+    "key": "media/bybit_eu_appstore_search-91d452f3aaa26427.webp",
+    "sha256": "91d452f3aaa264277510f84f838c730b64c278ee51c1b6ed8df75657ac4477b0",
+    "bytes": 34178,
+    "contentType": "image/webp",
+    "width": 540,
+    "height": 960,
+    "sourceSha256": "e9ab7cfa7b6b46b6f70d545700ac36a461d2ad1b1116a4bf6b701898a9316558",
+    "compressionVersion": "webp-1",
+    "variants": [
+      {
+        "key": "media/bybit_eu_appstore_search-91d452f3aaa26427-320x569.webp",
+        "sha256": "9686a61d7b982b1975fef13448f87e0ce6971a130262cee994f72a7286a1de34",
+        "bytes": 17410,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 569
+      }
+    ]
+  },
+  "images/articles/bybit-eu/bybit_eu_deposit_usdt.png": {
+    "key": "media/bybit_eu_deposit_usdt-c4f19ca50f0ac401.webp",
+    "sha256": "c4f19ca50f0ac4017c26435af687a9ae25d1aa4c4db95ac3ff107be42d7216b8",
+    "bytes": 23698,
+    "contentType": "image/webp",
+    "width": 480,
+    "height": 920,
+    "sourceSha256": "1282c41af96bff78945badf108abf08a43d9dfaaa1bda42579985529dacd3169",
+    "compressionVersion": "webp-1",
+    "variants": [
+      {
+        "key": "media/bybit_eu_deposit_usdt-c4f19ca50f0ac401-320x613.webp",
+        "sha256": "9114078e37737040f6a32a62b244831e449234c4aab593d873847205a06ceab5",
+        "bytes": 10270,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 613
+      }
+    ]
+  },
+  "images/articles/bybit-eu/bybit_eu_register_referral.png": {
+    "key": "media/bybit_eu_register_referral-a27c437d2de47d0a.webp",
+    "sha256": "a27c437d2de47d0a3976cb41d0814123a47f7bf423f7ba83c1e143d93000b4ec",
+    "bytes": 15722,
+    "contentType": "image/webp",
+    "width": 500,
+    "height": 900,
+    "sourceSha256": "bc8cea54551906a381b410173041d42347316fa3a5da5d32329f257a847b31ec",
+    "compressionVersion": "webp-1",
+    "variants": [
+      {
+        "key": "media/bybit_eu_register_referral-a27c437d2de47d0a-320x576.webp",
+        "sha256": "afb4abfaa9c0b4687047a523a8b790a80319f15fe42cb2195d7b434a0197f862",
+        "bytes": 8540,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 576
+      }
+    ]
+  },
+  "images/articles/bybit-eu/bybit_eu_travel_rule.png": {
+    "key": "media/bybit_eu_travel_rule-575eda30cede7be7.webp",
+    "sha256": "575eda30cede7be73e44275148693f528d2176c32f19162ed2700f929c0bfad5",
+    "bytes": 23570,
+    "contentType": "image/webp",
+    "width": 600,
+    "height": 920,
+    "sourceSha256": "f4fe024ac13dae7e72f65c5cf033938f8e2e6f16bb37f979018f8428345102f6",
+    "compressionVersion": "webp-1",
+    "variants": [
+      {
+        "key": "media/bybit_eu_travel_rule-575eda30cede7be7-320x491.webp",
+        "sha256": "9babec000949b04442cf6e671ce34eccba41be323fafa8e7503acaaeb6ce3e36",
+        "bytes": 9838,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 491
+      }
+    ]
+  },
+  "images/articles/bybit-eu/bybit_funding_ledger_airdrop.png": {
+    "key": "media/bybit_funding_ledger_airdrop-9baf8e115c237233.webp",
+    "sha256": "9baf8e115c2372338b069e23eec5d5005d72c5bbcb294f70bd6dd82c6c43d479",
+    "bytes": 113660,
+    "contentType": "image/webp",
+    "width": 1206,
+    "height": 2415,
+    "sourceSha256": "96221316de4d366379bf26bf08c275dc87a4b38d8f32cd72d4da437c20741cac",
+    "compressionVersion": "webp-1",
+    "variants": [
+      {
+        "key": "media/bybit_funding_ledger_airdrop-9baf8e115c237233-320x641.webp",
+        "sha256": "21795ac965acb9463d71d7ab1f143287d7468d0c68a0607bb84d908e936a0388",
+        "bytes": 21000,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 641
+      },
+      {
+        "key": "media/bybit_funding_ledger_airdrop-9baf8e115c237233-640x1282.webp",
+        "sha256": "8f770de63e1227a7ff1d75dc735cabde83d992bc92e91bac474a3efc6b520211",
+        "bytes": 55408,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 1282
+      },
+      {
+        "key": "media/bybit_funding_ledger_airdrop-9baf8e115c237233-960x1922.webp",
+        "sha256": "782c9e0c560a74392870fdd32702821496a56d5ed2cacb0186401b2c38679d51",
+        "bytes": 85716,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 1922
+      }
+    ]
+  },
+  "images/articles/bybit-eu/bybit_kyc_standard_passport.png": {
+    "key": "media/bybit_kyc_standard_passport-60f6ab847fd802de.webp",
+    "sha256": "60f6ab847fd802dec5779033bf8c6c3df3880f92c1798da3bbafadf352893469",
+    "bytes": 13514,
+    "contentType": "image/webp",
+    "width": 821,
+    "height": 554,
+    "sourceSha256": "f4a4590d87f2ad71e00c4113d2c69d8407dabd798b7dd049ef8919ffd3b29252",
+    "compressionVersion": "webp-1",
+    "variants": [
+      {
+        "key": "media/bybit_kyc_standard_passport-60f6ab847fd802de-320x216.webp",
+        "sha256": "2d7f6326bac0c05590255e383dc0f04c971e596541792622f9b0047336f39c20",
+        "bytes": 3642,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 216
+      },
+      {
+        "key": "media/bybit_kyc_standard_passport-60f6ab847fd802de-640x432.webp",
+        "sha256": "6ee78dea127f582913e24627865a7cdc9007cb16051a0415cf0854efe46028a9",
+        "bytes": 9284,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 432
+      }
+    ]
+  },
+  "images/articles/bybit-eu/bybit_rewards_hub_airdrop.png": {
+    "key": "media/bybit_rewards_hub_airdrop-e8416de7c0cef455.webp",
+    "sha256": "e8416de7c0cef45516e6948f2aa0892e9357b6200425c5e01fdf99b92b84dfab",
+    "bytes": 36854,
+    "contentType": "image/webp",
+    "width": 942,
+    "height": 1880,
+    "sourceSha256": "8ba6308cb4a5a8fa27c69604f39662161e49f447a062b1ae417dd5f883cd6a7f",
+    "compressionVersion": "webp-1",
+    "variants": [
+      {
+        "key": "media/bybit_rewards_hub_airdrop-e8416de7c0cef455-320x639.webp",
+        "sha256": "206ce3042a6308669ae31818927a2d8cf3061c4274ae587efcbc120f7cc4a812",
+        "bytes": 10642,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 639
+      },
+      {
+        "key": "media/bybit_rewards_hub_airdrop-e8416de7c0cef455-640x1277.webp",
+        "sha256": "b97fbe10d9009ae1d25213a0b0b790362c7fabc4c45d88aa2f7a086588c562b1",
+        "bytes": 24026,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 1277
+      }
+    ]
+  },
+  "images/avatar.png": {
+    "key": "site/images/avatar.f8ed11b97e1c8c32-1254w.webp",
+    "sha256": "f8ed11b97e1c8c32e38951eda14a9535c81ab13a8616241e6055221b6c55e430",
+    "bytes": 104690,
+    "contentType": "image/webp",
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "key": "site/images/avatar.9fd60db97b12ed90-320w.webp",
+        "sha256": "9fd60db97b12ed905a11d44d396c09243f89c22a41b75ba44d0397da4af7cef2",
+        "bytes": 12358,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "key": "site/images/avatar.f05d04c8a0be1485-640w.webp",
+        "sha256": "f05d04c8a0be148577cdd76bb189be4d2e83637d26083b54dc8b1c301cd4f05b",
+        "bytes": 36926,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "key": "site/images/avatar.c72748ef1226e4b1-960w.webp",
+        "sha256": "c72748ef1226e4b1532fed42e6ffe142001a07cf228323a533345972e443566e",
+        "bytes": 70042,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 960
+      }
+    ],
+    "sourceSha256": "148db98cd639967af62747d78c2b38aa1fe29a07608ac5a0aff1a0ba4ba1db52",
+    "compressionVersion": "webp-1"
+  },
+  "images/brands/chatgpt.svg": {
+    "key": "site/images/brands/chatgpt.701828451dca4419-305w.webp",
+    "sha256": "701828451dca441924081ddf1b29f167c0105a3443afacc422d2d2bf40d12539",
+    "bytes": 6058,
+    "contentType": "image/webp",
+    "width": 305,
+    "height": 305,
+    "variants": [],
+    "sourceSha256": "ec3e724462eadaf6abf9c81a61a3b2f8dce5015066639892381ba8638f0c37fc",
+    "compressionVersion": "webp-1"
+  },
+  "images/brands/claude.svg": {
+    "key": "site/images/brands/claude.69a6de4337831b02-320w.webp",
+    "sha256": "69a6de4337831b02185f8cb14f04a6ef9a0dd067b8ce3943b50fc752796fec23",
+    "bytes": 4332,
+    "contentType": "image/webp",
+    "width": 320,
+    "height": 70,
+    "variants": [],
+    "sourceSha256": "19d1a4eedb2cc6f70077b0a3434bf010bd502205fe3f8f990fedf7c619be3e23",
+    "compressionVersion": "webp-1"
+  },
+  "images/brands/gemini.svg": {
+    "key": "site/images/brands/gemini.79004c3effdc70e5-192w.webp",
+    "sha256": "79004c3effdc70e5899fa3d9b7990b2002c47147d40a5466ef87ef922430ee42",
+    "bytes": 3146,
+    "contentType": "image/webp",
+    "width": 192,
+    "height": 192,
+    "variants": [],
+    "sourceSha256": "f56df33f86dc0c0257da337c63bf7ad68c0a1b27b796ec707e147984351bccb3",
+    "compressionVersion": "webp-1"
+  },
+  "images/brands/giffgaff.svg": {
+    "key": "site/images/brands/giffgaff.ca040a3061259bf8-320w.webp",
+    "sha256": "ca040a3061259bf88fa8978fcbd8192939b8327fd4bf3fd690e2771818737698",
+    "bytes": 2892,
+    "contentType": "image/webp",
+    "width": 320,
+    "height": 111,
+    "variants": [],
+    "sourceSha256": "d1c584364eb465ea2902f96993250785bd3cac1e035afe429ea2bb795ec8164e",
+    "compressionVersion": "webp-1"
+  },
+  "images/brands/tello.png": {
+    "key": "site/images/brands/tello.0f004740d7fbfba0-320w.webp",
+    "sha256": "0f004740d7fbfba008be49147575b36c70cd2bb967a45a9c5dd70cc3cc916052",
+    "bytes": 4196,
+    "contentType": "image/webp",
+    "width": 320,
+    "height": 320,
+    "variants": [],
+    "sourceSha256": "922d9ed791e733b6d173dbb14f74e1ccd7e1a70813363c526c74990bd8ede3ca",
+    "compressionVersion": "webp-1"
+  },
+  "images/brands/vodafone.svg": {
+    "key": "site/images/brands/vodafone.f2a4a4b4c0498fcc-80w.webp",
+    "sha256": "f2a4a4b4c0498fcce9d30e93406b96d8822ea4b3da9f29d32275a09e4d133d94",
+    "bytes": 2010,
+    "contentType": "image/webp",
+    "width": 80,
+    "height": 80,
+    "variants": [],
+    "sourceSha256": "f56f3e3aff2d0f4161366b72ed7e83b1381fdaac07f65a31901e2c61a79bd655",
+    "compressionVersion": "webp-1"
+  },
+  "images/esim-dark.png": {
+    "key": "site/images/esim-dark.a2a5d964c8cd8e52-1254w.webp",
+    "sha256": "a2a5d964c8cd8e52f87d455d5caa98b7411b02a2e469293f85fa71085c89c053",
+    "bytes": 54860,
+    "contentType": "image/webp",
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "key": "site/images/esim-dark.d86524c431fc1dcf-320w.webp",
+        "sha256": "d86524c431fc1dcf757b9d3d90fd04cd515c75bd16a16410e0ecf2762e9c68db",
+        "bytes": 6644,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "key": "site/images/esim-dark.85ae914cd2efb32c-640w.webp",
+        "sha256": "85ae914cd2efb32cac969ab9ca1abc6d77118df070e4ddd927d0da82a05d286f",
+        "bytes": 18372,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "key": "site/images/esim-dark.ca44bf8a1b6dffc8-960w.webp",
+        "sha256": "ca44bf8a1b6dffc875166fd923a436acfbe1df7d170d47b84f98c910633faba6",
+        "bytes": 35408,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 960
+      }
+    ],
+    "sourceSha256": "41d5f152e5bea3d84c7906791f421c11f4739541f326f7ecb21a67756ea6b88f",
+    "compressionVersion": "webp-1"
+  },
+  "images/esim-light.png": {
+    "key": "site/images/esim-light.6eeefb03e0c06a2c-1254w.webp",
+    "sha256": "6eeefb03e0c06a2c41b5111ce08ade012fa99cfdb81a6d6325f3506b2cb10fe6",
+    "bytes": 66750,
+    "contentType": "image/webp",
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "key": "site/images/esim-light.8aa7efb5e32f477f-320w.webp",
+        "sha256": "8aa7efb5e32f477fe01f0f90cf2f2cced014c532174ab82c009f07a4b9607429",
+        "bytes": 5676,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "key": "site/images/esim-light.ac7a74937427660a-640w.webp",
+        "sha256": "ac7a74937427660ae1de4a0b852eda4f92b91e268888e249513bbecbb869ddf1",
+        "bytes": 17782,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "key": "site/images/esim-light.44373c88d64a5c09-960w.webp",
+        "sha256": "44373c88d64a5c095ac0d06b85fe2743fb1a6ee279aa918c13ecc34a1c318788",
+        "bytes": 37264,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 960
+      }
+    ],
+    "sourceSha256": "43b460f86e072f56852e7ff0799e617c0addf0087f3d31a2ccfbbfcd3c2b02dd",
+    "compressionVersion": "webp-1"
+  },
+  "images/global-cards.png": {
+    "key": "site/images/global-cards.99c02db9e411fa15-1374w.webp",
+    "sha256": "99c02db9e411fa159f2fe1a7414fff388765a95986fcd3e217f1ac06e73b052d",
+    "bytes": 122760,
+    "contentType": "image/webp",
+    "width": 1374,
+    "height": 1145,
+    "variants": [
+      {
+        "key": "site/images/global-cards.65dea48a0af02e8a-320w.webp",
+        "sha256": "65dea48a0af02e8a50df7d90d1e1f016c814eac40eacd8ce8b8a13d83ee6d0ac",
+        "bytes": 10482,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 267
+      },
+      {
+        "key": "site/images/global-cards.9afd91ee13838bfd-640w.webp",
+        "sha256": "9afd91ee13838bfd6a13ab75bbccdf29206dedffb904dda86a6e4438ed01ea26",
+        "bytes": 35714,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 533
+      },
+      {
+        "key": "site/images/global-cards.f04ea3399aeaf61a-960w.webp",
+        "sha256": "f04ea3399aeaf61a190d87f253bb58a4407d9eeecc85bdd8cf21bbfbe456b9ae",
+        "bytes": 70914,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 800
+      },
+      {
+        "key": "site/images/global-cards.8963f33d454d116c-1280w.webp",
+        "sha256": "8963f33d454d116c1347cf29bdb38cda6a1610f2f970946f3f6ecc1a9b7cf247",
+        "bytes": 109932,
+        "contentType": "image/webp",
+        "width": 1280,
+        "height": 1067
+      }
+    ],
+    "sourceSha256": "2e5ee167b22fcbd6e657b4dc58422e7098a13a04382eebaea1729aa7bcb757c2",
+    "compressionVersion": "webp-1"
+  },
+  "images/payment-card-dark.png": {
+    "key": "site/images/payment-card-dark.4c74871722f8fe1d-1254w.webp",
+    "sha256": "4c74871722f8fe1d97f7113117a9de03e16ee654e7eb6a76a58fa586cb30370d",
+    "bytes": 35192,
+    "contentType": "image/webp",
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "key": "site/images/payment-card-dark.bf9ca7151ae26b2f-320w.webp",
+        "sha256": "bf9ca7151ae26b2febe6c158a0229e9efba9c34b27427d1e4c4554c3792a7826",
+        "bytes": 2700,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "key": "site/images/payment-card-dark.e484a34b4f0b5c7b-640w.webp",
+        "sha256": "e484a34b4f0b5c7b50b564bb4c9ba3e93a86b74911d325a7e30e4aaa5dace28a",
+        "bytes": 7946,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "key": "site/images/payment-card-dark.03e5390c9e24df4c-960w.webp",
+        "sha256": "03e5390c9e24df4cb533fafe6a85cff0f22f7284ebca0792e122ed56a64d1ffe",
+        "bytes": 17334,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 960
+      }
+    ],
+    "sourceSha256": "7e2ddfdf6b52822a71baa69668dd56055117a6976af34a643310b1f6782f3aa8",
+    "compressionVersion": "webp-1"
+  },
+  "images/payment-card-light.png": {
+    "key": "site/images/payment-card-light.cc3e7480672be62b-1254w.webp",
+    "sha256": "cc3e7480672be62b136600f75c68314588d3a0092d18fe5a2924abcb163e51ae",
+    "bytes": 52698,
+    "contentType": "image/webp",
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "key": "site/images/payment-card-light.546a58f4778c5dcb-320w.webp",
+        "sha256": "546a58f4778c5dcb1f1c1a76aab8ed7bbac8cc9af688db880c9860cec0d5995f",
+        "bytes": 3020,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "key": "site/images/payment-card-light.4042f69c62e5e0fb-640w.webp",
+        "sha256": "4042f69c62e5e0fbb4d15c8b32627fae5b49fa22bf8cf5cb4d9589bab458d83f",
+        "bytes": 8886,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "key": "site/images/payment-card-light.173a36d2f87aa995-960w.webp",
+        "sha256": "173a36d2f87aa995f071429b1609c220337d95ece5b011e218de7ac55aa21d3c",
+        "bytes": 26530,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 960
+      }
+    ],
+    "sourceSha256": "ae44533a42fed4a77ee858d771deffcdb9849347e18d34452b2694f30849d3f5",
+    "compressionVersion": "webp-1"
+  },
+  "images/social/bybit-eu.png": {
+    "key": "site/images/social/bybit-eu.99c762f352fde37e-1200w.webp",
+    "sha256": "99c762f352fde37edc09bdc081cf9d334692705fa2323c89a7e1e4371badb4fe",
+    "bytes": 47942,
+    "contentType": "image/webp",
+    "width": 1200,
+    "height": 630,
+    "variants": [
+      {
+        "key": "site/images/social/bybit-eu.c7abd9a37d89fbe0-320w.webp",
+        "sha256": "c7abd9a37d89fbe000f1cf6998c6ff0cbb3a411bb6702c6e2a58d56fb37df7c6",
+        "bytes": 8994,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 168
+      },
+      {
+        "key": "site/images/social/bybit-eu.eb784eae84d5edb1-640w.webp",
+        "sha256": "eb784eae84d5edb148e1eee012efee63054079c94ae8537c90f19bae57c00853",
+        "bytes": 22628,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 336
+      },
+      {
+        "key": "site/images/social/bybit-eu.1b413311d542c3a6-960w.webp",
+        "sha256": "1b413311d542c3a6f0014e3b1182d8c169dd80652ea9da41b46297a501b01d7c",
+        "bytes": 39254,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 504
+      }
+    ],
+    "sourceSha256": "095a6fcc0cca6770ad17a0bc3ade1ea127c4d61641bf3ca8ad766d04dc83efa9",
+    "compressionVersion": "webp-1"
+  },
+  "images/social/mason.png": {
+    "key": "site/images/social/mason.10adfd2b445d9a5f-1200w.webp",
+    "sha256": "10adfd2b445d9a5f978fe75e3b6f9ddb68eca5141af73d42fa920a26b363c3c4",
+    "bytes": 23814,
+    "contentType": "image/webp",
+    "width": 1200,
+    "height": 630,
+    "variants": [
+      {
+        "key": "site/images/social/mason.1afcd2e37db8cd79-320w.webp",
+        "sha256": "1afcd2e37db8cd798b7c6e9f8af74f815fd74f13df8002a8ee337978a5fd2aea",
+        "bytes": 4704,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 168
+      },
+      {
+        "key": "site/images/social/mason.04b6eafef66738dc-640w.webp",
+        "sha256": "04b6eafef66738dc522011fe6b6df80340000b795850af8148a114781a5ef269",
+        "bytes": 11308,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 336
+      },
+      {
+        "key": "site/images/social/mason.98cf6d55f383df00-960w.webp",
+        "sha256": "98cf6d55f383df00a957db83811b0f3f7f491361c7d0b0f5456c490b4899b372",
+        "bytes": 18342,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 504
+      }
+    ],
+    "sourceSha256": "b4260db90f60c62109987879aa13bdbd9da2255f608769393d52f2178557b0e0",
+    "compressionVersion": "webp-1"
+  },
+  "images/starryblu-dark.png": {
+    "key": "site/images/starryblu-dark.873f0054ab7f88e1-1870w.webp",
+    "sha256": "873f0054ab7f88e1c2b4b1401ca524f4c996f89ccaccb006d2452ad5e240b230",
+    "bytes": 113660,
+    "contentType": "image/webp",
+    "width": 1870,
+    "height": 841,
+    "variants": [
+      {
+        "key": "site/images/starryblu-dark.6e00613ac6b92fdc-320w.webp",
+        "sha256": "6e00613ac6b92fdc8e084461c1baf3be8fab86c2dada343c91978f6a3547edce",
+        "bytes": 4710,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 144
+      },
+      {
+        "key": "site/images/starryblu-dark.26122a3181e0c625-640w.webp",
+        "sha256": "26122a3181e0c625cab108b6cc3053dc8d1bc0f61ebb415f37a5851d03845c52",
+        "bytes": 18578,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 288
+      },
+      {
+        "key": "site/images/starryblu-dark.2931d8c0193fbaff-960w.webp",
+        "sha256": "2931d8c0193fbaffeeb9302120e50f038b3c5a2066df73f2897e56ed554a339b",
+        "bytes": 40390,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 432
+      },
+      {
+        "key": "site/images/starryblu-dark.de86698329097531-1280w.webp",
+        "sha256": "de866983290975311f709b9cd9522a46ffab06f39d4ab8c8d7fee1a3e59ca79b",
+        "bytes": 66002,
+        "contentType": "image/webp",
+        "width": 1280,
+        "height": 576
+      }
+    ],
+    "sourceSha256": "09df2f8e106b53f23d75ff669f3a34e595f701aed846923171a2deaddbccd472",
+    "compressionVersion": "webp-1"
+  },
+  "images/starryblu-light.png": {
+    "key": "site/images/starryblu-light.3bc10c2b4a0b5139-1499w.webp",
+    "sha256": "3bc10c2b4a0b51396e574748165b6fad6cc43d76af02a00a285b2380574cafaa",
+    "bytes": 109064,
+    "contentType": "image/webp",
+    "width": 1499,
+    "height": 1049,
+    "variants": [
+      {
+        "key": "site/images/starryblu-light.c67c76ab0188beac-320w.webp",
+        "sha256": "c67c76ab0188beaca40a5f3f56dfb86232c16592c402e5721844874e7bc7f46b",
+        "bytes": 8228,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 224
+      },
+      {
+        "key": "site/images/starryblu-light.0dc8ad4c7d274c15-640w.webp",
+        "sha256": "0dc8ad4c7d274c1561d60be3f41c29bae23b9f6fb3f36db644edf32493e47093",
+        "bytes": 29252,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 448
+      },
+      {
+        "key": "site/images/starryblu-light.6e7df045d692ce8f-960w.webp",
+        "sha256": "6e7df045d692ce8fd655614b3ec7cda0e81fcdcbe862bde518fea055c42c8155",
+        "bytes": 58970,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 672
+      },
+      {
+        "key": "site/images/starryblu-light.8dec239fc1b057c8-1280w.webp",
+        "sha256": "8dec239fc1b057c8b3f5786eca4c0abba76b23da7cfaa4459ce12745881cddcc",
+        "bytes": 90506,
+        "contentType": "image/webp",
+        "width": 1280,
+        "height": 896
+      }
+    ],
+    "sourceSha256": "2858420a189ad67df62bdc6e6eedc7cb607e3de1763d4e51259b6255e162b0bb",
+    "compressionVersion": "webp-1"
+  },
+  "images/articles/xesim/xesim_cover_2000x800.png": {
+    "key": "site/images/articles/xesim/xesim_cover_2000x800.bc3afccc391a7291-1920w.webp",
+    "sha256": "bc3afccc391a7291b204d17306eee17e8eb1a7601dba6b2949040225d5f46ada",
+    "bytes": 122870,
+    "contentType": "image/webp",
+    "width": 1920,
+    "height": 768,
+    "variants": [
+      {
+        "key": "site/images/articles/xesim/xesim_cover_2000x800.982141b447555aca-320w.webp",
+        "sha256": "982141b447555aca21e58b1d64d2ed7408809ee4e48a0b5c4723ec96c9430890",
+        "bytes": 10652,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 128
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_cover_2000x800.dd1be834196b7d84-640w.webp",
+        "sha256": "dd1be834196b7d84aa85de0a056539aac9a3f72474383c3ec153fd919d0a63f1",
+        "bytes": 27952,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 256
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_cover_2000x800.40da9740213bd7b9-960w.webp",
+        "sha256": "40da9740213bd7b9049b9f72400422f7d5bfc8ca704847884461b2480fa9b62d",
+        "bytes": 49250,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 384
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_cover_2000x800.f4d70d9e3cbbab88-1280w.webp",
+        "sha256": "f4d70d9e3cbbab886b5e10778f39d206f225548e9bece299ef32cd02d2bcb129",
+        "bytes": 73816,
+        "contentType": "image/webp",
+        "width": 1280,
+        "height": 512
+      }
+    ],
+    "sourceSha256": "35e4ba26fc07b6664073e7ff22ac108a0ba1d08c71cf526107aa9d117dd0920c",
+    "compressionVersion": "webp-1"
+  },
+  "images/articles/xesim/xesim_fig1_unbox.jpg": {
+    "key": "site/images/articles/xesim/xesim_fig1_unbox.e79c2b7721c3b5a8-1200w.webp",
+    "sha256": "e79c2b7721c3b5a8b09e6cc5fd85569111bfa04b5e451402bc785223add64056",
+    "bytes": 69758,
+    "contentType": "image/webp",
+    "width": 1200,
+    "height": 736,
+    "variants": [
+      {
+        "key": "site/images/articles/xesim/xesim_fig1_unbox.e3de823fb994284a-320w.webp",
+        "sha256": "e3de823fb994284a0d14f0363ee3197e71086ff861cdd40367f0c081bd085b55",
+        "bytes": 11206,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 196
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig1_unbox.467c9d96c686362d-640w.webp",
+        "sha256": "467c9d96c686362d06b92a6f62da325045c4c8b33dbbf1bbec451575ace8d046",
+        "bytes": 29868,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 393
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig1_unbox.b738ee35a0029eda-960w.webp",
+        "sha256": "b738ee35a0029edae978bc9b1c61d7c31863fc7609c7bcec1c7491a9d8dcec8b",
+        "bytes": 50522,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 589
+      }
+    ],
+    "sourceSha256": "cec20b1e73126e422abca18fae0fa0763e2591ed5bb3990078940e474596bdc3",
+    "compressionVersion": "webp-1"
+  },
+  "images/articles/xesim/xesim_fig2_versions.png": {
+    "key": "site/images/articles/xesim/xesim_fig2_versions.cacfbb464f4af344-1400w.webp",
+    "sha256": "cacfbb464f4af3448c21657aeceba6a44ee3a9eee02d5e71793961853f5f2d3c",
+    "bytes": 56378,
+    "contentType": "image/webp",
+    "width": 1400,
+    "height": 780,
+    "variants": [
+      {
+        "key": "site/images/articles/xesim/xesim_fig2_versions.aff91383d033a2e9-320w.webp",
+        "sha256": "aff91383d033a2e97819f0b4a1dfff410b1f7b3cd7fc83f370c32f6f76108fab",
+        "bytes": 6006,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 178
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig2_versions.0aabeaf23eb23c95-640w.webp",
+        "sha256": "0aabeaf23eb23c959dcd4300587b22eb07c0cbf988b79da73a77f77f944b528d",
+        "bytes": 18110,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 357
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig2_versions.ef591d9ae4bd57f9-960w.webp",
+        "sha256": "ef591d9ae4bd57f9368133e591408543ace929e1ae1de5371853be9f5406e092",
+        "bytes": 33284,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 535
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig2_versions.c30e07d1d6bf3232-1280w.webp",
+        "sha256": "c30e07d1d6bf3232f0eaf3d526f34b0a6c0382c2a442ce8195142d81ed138d59",
+        "bytes": 50568,
+        "contentType": "image/webp",
+        "width": 1280,
+        "height": 713
+      }
+    ],
+    "sourceSha256": "1ce26ae8ffae20e9b6b3b7e205451c5471c8baf23c1a6804fb60ef5351cb21a9",
+    "compressionVersion": "webp-1"
+  },
+  "images/articles/xesim/xesim_fig3_ios_stk.png": {
+    "key": "site/images/articles/xesim/xesim_fig3_ios_stk.b9a430f60973cddc-1500w.webp",
+    "sha256": "b9a430f60973cddcad111bfd8484bb0530f5c269406ec3682185ff4bbf7e9927",
+    "bytes": 60298,
+    "contentType": "image/webp",
+    "width": 1500,
+    "height": 840,
+    "variants": [
+      {
+        "key": "site/images/articles/xesim/xesim_fig3_ios_stk.9d951de4f2e88df4-320w.webp",
+        "sha256": "9d951de4f2e88df439f5edfd474ebe8563af4ca65f24baac2e512a8c99775785",
+        "bytes": 6828,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 179
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig3_ios_stk.1f5b236ccb9f4352-640w.webp",
+        "sha256": "1f5b236ccb9f435232fcd8c8958b62857eccfd356b3f959444147f2c69e2d56d",
+        "bytes": 17626,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 358
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig3_ios_stk.01861878dc83ff3a-960w.webp",
+        "sha256": "01861878dc83ff3adea52d9535c165cc8daad2595e77c47d0d69a0af75ee0216",
+        "bytes": 31690,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 538
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig3_ios_stk.eb5e6687dc639b57-1280w.webp",
+        "sha256": "eb5e6687dc639b5746a2ff2f086692bf4a2a0768dd76183e877398f20e8a0428",
+        "bytes": 48660,
+        "contentType": "image/webp",
+        "width": 1280,
+        "height": 717
+      }
+    ],
+    "sourceSha256": "8307269357335127a2b5c94433c81752cfa9f157ebeb3dfd563976a4d2efc92d",
+    "compressionVersion": "webp-1"
+  },
+  "images/articles/xesim/xesim_fig4_csl.png": {
+    "key": "site/images/articles/xesim/xesim_fig4_csl.8f2fba58891771b0-1200w.webp",
+    "sha256": "8f2fba58891771b015ed422bc8f7a910532c3495c2b9365f848d0f5db9e66839",
+    "bytes": 44964,
+    "contentType": "image/webp",
+    "width": 1200,
+    "height": 750,
+    "variants": [
+      {
+        "key": "site/images/articles/xesim/xesim_fig4_csl.6b426a2de1c26354-320w.webp",
+        "sha256": "6b426a2de1c26354bfafaae3953d9ac147e99b025a45d64ae81748924c77b662",
+        "bytes": 5884,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 200
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig4_csl.6f949c7a2549cae8-640w.webp",
+        "sha256": "6f949c7a2549cae8f8d86b05a900e4119f9aa721d7d14f1034ed963fa9e0f4ed",
+        "bytes": 18152,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 400
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig4_csl.d752124d518326e6-960w.webp",
+        "sha256": "d752124d518326e698d54b5d50f8d2e263e44fd6a31beb8756d5bad1b70b5fad",
+        "bytes": 33950,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 600
+      }
+    ],
+    "sourceSha256": "bdfba7b7ecbfc9a1c42f4b53c1aec6b024bb0ed8def1aff4625e9453f3d15817",
+    "compressionVersion": "webp-1"
+  },
+  "images/articles/xesim/xesim_fig5_lebara.png": {
+    "key": "site/images/articles/xesim/xesim_fig5_lebara.53db61cd6d022a9f-1200w.webp",
+    "sha256": "53db61cd6d022a9f635908ddac516fb6c0b91772d7a5c9c27051e619c7135784",
+    "bytes": 51470,
+    "contentType": "image/webp",
+    "width": 1200,
+    "height": 750,
+    "variants": [
+      {
+        "key": "site/images/articles/xesim/xesim_fig5_lebara.15208bf4861dd07e-320w.webp",
+        "sha256": "15208bf4861dd07ecdfcf06d50f311da92e3fad4306f55c13d470c3da60e1b9c",
+        "bytes": 6856,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 200
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig5_lebara.91baa8d2994e8419-640w.webp",
+        "sha256": "91baa8d2994e84191f2ab0f3400cfeabac54f1c89f3fd469dbf84b1f432204d8",
+        "bytes": 20862,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 400
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig5_lebara.7a813b266fd58c9e-960w.webp",
+        "sha256": "7a813b266fd58c9e7bd6d4b9a9838e654ddff87113b41f90a61d2bdb0707d36a",
+        "bytes": 38220,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 600
+      }
+    ],
+    "sourceSha256": "1f40015e3b361b3828c417c741320c3d235e3c7cca1ffdb4c2e0be96090947a5",
+    "compressionVersion": "webp-1"
+  },
+  "images/articles/xesim/xesim_fig6_o2.png": {
+    "key": "site/images/articles/xesim/xesim_fig6_o2.5ebe9932b89f4f34-1280w.webp",
+    "sha256": "5ebe9932b89f4f347d8d6ad2a348f831d14f3f07223a243b24908b8e51840539",
+    "bytes": 58242,
+    "contentType": "image/webp",
+    "width": 1280,
+    "height": 820,
+    "variants": [
+      {
+        "key": "site/images/articles/xesim/xesim_fig6_o2.23a2ef74099a679f-320w.webp",
+        "sha256": "23a2ef74099a679f1cef667fdef422ff2e1eac3050a3055937045ab55920c9aa",
+        "bytes": 8172,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 205
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig6_o2.20e4d2ce61d0f171-640w.webp",
+        "sha256": "20e4d2ce61d0f171f0a2f2d7ab40f67295970221d3168b5907a1911b5abc0a2b",
+        "bytes": 22194,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 410
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig6_o2.26ac8b90ccc7ae55-960w.webp",
+        "sha256": "26ac8b90ccc7ae55adc9db16bd9ac56764377d6f201367567044b7050d952f00",
+        "bytes": 38892,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 615
+      }
+    ],
+    "sourceSha256": "6408f465bb5f669ce649a3b7019d1c1031efe9ca6a77dff7c7bf3a2d3e449849",
+    "compressionVersion": "webp-1"
+  },
+  "images/articles/xesim/xesim_fig7_settings.png": {
+    "key": "site/images/articles/xesim/xesim_fig7_settings.39792d6334cbc9a3-1200w.webp",
+    "sha256": "39792d6334cbc9a39084a577bd99a01855e4f8f5f77e7cda1d2d52b6d09f506d",
+    "bytes": 37434,
+    "contentType": "image/webp",
+    "width": 1200,
+    "height": 750,
+    "variants": [
+      {
+        "key": "site/images/articles/xesim/xesim_fig7_settings.8870bf434a7ca0b5-320w.webp",
+        "sha256": "8870bf434a7ca0b56cd109a39ff34d5f3cda5aba32814b191c8ba5a8e28f0b6a",
+        "bytes": 5482,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 200
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig7_settings.3fa7600f0d7c3cb6-640w.webp",
+        "sha256": "3fa7600f0d7c3cb683b05a1fae05d98f02610300c5c89793478ded37477079d0",
+        "bytes": 14792,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 400
+      },
+      {
+        "key": "site/images/articles/xesim/xesim_fig7_settings.869bb39eea2abf40-960w.webp",
+        "sha256": "869bb39eea2abf4053fd5ab3188b0c8db358e3793cffefb22a0a97849ac669b7",
+        "bytes": 27256,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 600
+      }
+    ],
+    "sourceSha256": "e384a89a84fbfecbec8487a79708d2593786621f40b71ea064833dcd1cc29745",
+    "compressionVersion": "webp-1"
+  },
+  "images/social/xesim.png": {
+    "key": "site/images/social/xesim.3ff81389e9f7b203-1200w.webp",
+    "sha256": "3ff81389e9f7b203b5b227c6a0705ef54fb96107113b302ec77b9a1df547b041",
+    "bytes": 57770,
+    "contentType": "image/webp",
+    "width": 1200,
+    "height": 630,
+    "variants": [
+      {
+        "key": "site/images/social/xesim.bbdc846a6d1636ee-320w.webp",
+        "sha256": "bbdc846a6d1636ee91c931b79ca4489b3eb0837fd99ee92ae12beafc4fc8ed60",
+        "bytes": 10176,
+        "contentType": "image/webp",
+        "width": 320,
+        "height": 168
+      },
+      {
+        "key": "site/images/social/xesim.8ee7499fb5e17bd9-640w.webp",
+        "sha256": "8ee7499fb5e17bd950e17f1ae73cb2b5d978391f6f74412404b9d6a9b66d8ed4",
+        "bytes": 26348,
+        "contentType": "image/webp",
+        "width": 640,
+        "height": 336
+      },
+      {
+        "key": "site/images/social/xesim.fafbd43ce79f748b-960w.webp",
+        "sha256": "fafbd43ce79f748b3ccff694d9c6024b4ed4a8f9f005449443424bbed8e24d7e",
+        "bytes": 43774,
+        "contentType": "image/webp",
+        "width": 960,
+        "height": 504
+      }
+    ],
+    "sourceSha256": "ac7734433fc9a3b9fa221060345393bb0f7c68b053ad7be39cc9341ae9c3fb7a",
+    "compressionVersion": "webp-1"
+  }
+}

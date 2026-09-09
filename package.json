@@ -1,0 +1,71 @@
+{
+  "name": "0xmason",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "assets": "tsx scripts/generate-brand-assets.mjs",
+    "assets:upload": "tsx scripts/upload-asset.ts",
+    "predev": "node scripts/check-image-storage.mjs",
+    "prebuild": "node scripts/check-image-storage.mjs",
+    "prestart": "node scripts/check-image-storage.mjs",
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "cms:db": "node scripts/local-db.mjs",
+    "cms:db:stop": "node scripts/local-db.mjs stop",
+    "payload": "payload",
+    "cms:types": "payload generate:types",
+    "cms:importmap": "payload generate:importmap",
+    "cms:migrate": "payload migrate",
+    "cms:seed": "tsx scripts/seed-cms.ts",
+    "cms:setup": "npm run cms:db && npm run cms:migrate && npm run cms:seed",
+    "cms:admin": "tsx scripts/cms-admin.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "test:cms": "tsx scripts/verify-cms.ts",
+    "check:privacy": "node scripts/check-public-files.mjs",
+    "check:images": "node scripts/check-image-storage.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.1128.0",
+    "@payloadcms/db-postgres": "3.88.0",
+    "@payloadcms/next": "3.88.0",
+    "@payloadcms/richtext-lexical": "3.88.0",
+    "@payloadcms/storage-s3": "3.88.0",
+    "@payloadcms/translations": "3.88.0",
+    "@phosphor-icons/react": "2.1.10",
+    "dotenv": "17.4.2",
+    "geist": "1.7.2",
+    "graphql": "16.13.1",
+    "next": "16.3.4",
+    "next-themes": "0.4.6",
+    "payload": "3.88.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-markdown": "10.1.0",
+    "remark-gfm": "4.0.1",
+    "sharp": "0.35.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.5.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.4",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.13",
+    "typescript": "6.0.3"
+  },
+  "overrides": {
+    "dompurify": "3.4.15",
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.28.2"
+    }
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}
