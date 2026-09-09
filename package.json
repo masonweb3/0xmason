@@ -26,7 +26,8 @@
     "test": "tsx --test tests/*.test.ts",
     "test:cms": "tsx scripts/verify-cms.ts",
     "check:privacy": "node scripts/check-public-files.mjs",
-    "check:images": "node scripts/check-image-storage.mjs"
+    "check:images": "node scripts/check-image-storage.mjs",
+    "check:seo": "python3 scripts/check-seo.py"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "3.1128.0",

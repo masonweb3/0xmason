@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { assetUrl } from './cdn';
+import { assetUrl, assetMetadata } from './cdn';
 
 export const site = {
   name: "Mason",
@@ -11,7 +11,7 @@ export const site = {
 };
 
 // Launch requires both the production environment and an explicit indexing opt-in.
-export function isIndexingEnabled(environment = process.env) {
+export function isIndexingEnabled(environment: Record<string, string | undefined> = process.env) {
   return environment.VERCEL_ENV === "production" && environment.SITE_INDEXING_ENABLED === "true";
 }
 
@@ -23,13 +23,14 @@ export function pageMetadata({ title, description, path, image = site.image, ind
   title: string;
   description: string;
   path: string;
-  image?: string;
+  image?: string | { src: string; width?: number; height?: number };
   indexable?: boolean;
   article?: { updatedAt: string };
 }): Metadata {
   const index = isIndexingEnabled() && indexable;
   const socialTitle = title === site.title ? title : `${title} · ${site.name}`;
-  const images = [{ url: absoluteUrl(image), width: 1200, height: 630, alt: title }];
+  const source = typeof image === 'string' ? { src: image, ...assetMetadata(image) } : image;
+  const images = [{ url: absoluteUrl(source.src), ...(source.width && source.height ? { width: source.width, height: source.height } : {}), alt: title }];
   return {
     title,
     description,

@@ -3,7 +3,12 @@ import assets from '../../content/cdn-assets.json' with { type: 'json' };
 export const CDN_ORIGIN = 'https://cdn.0xmason.com';
 export const MEDIA_PREFIX = 'media';
 export type ImageSource = { src: string; width: number };
-type ManifestAsset = { key: string; width: number; variants?: { key: string; width: number }[] };
+type ManifestAsset = { key: string; width: number; height: number; variants?: { key: string; width: number }[] };
+
+export function assetMetadata(url: string) {
+  const asset = (Object.values(assets) as ManifestAsset[]).find((item) => cdnUrl(item.key) === url);
+  return asset ? { width: asset.width, height: asset.height } : {};
+}
 
 export function assetSources(url: string): ImageSource[] {
   const asset = (Object.values(assets) as ManifestAsset[]).find((item) => cdnUrl(item.key) === url);

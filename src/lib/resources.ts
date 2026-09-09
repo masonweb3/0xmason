@@ -3,7 +3,7 @@ import { getPayload } from 'payload';
 import config from '@payload-config';
 import type { Article, Category as CMSCategory, Media, AffiliateLink, User } from '@/payload-types';
 import { published } from '@/cms/access';
-import { assetUrl, isCDNImage, mediaUrl, type ImageSource } from './cdn';
+import { assetUrl, assetMetadata, isCDNImage, mediaUrl, type ImageSource } from './cdn';
 
 export type CategorySlug = CMSCategory['slug'];
 export type Category = Pick<CMSCategory, 'slug' | 'title' | 'summary' | 'description'>;
@@ -12,7 +12,7 @@ export type PublicAffiliate = Pick<AffiliateLink, 'id' | 'name' | 'url' | 'label
 export type Resource = {
   id: number; slug: string; category: CategorySlug; title: string; summary: string;
   seoTitle: string; seoDescription: string; status: 'ready'; recordedAt: string; updatedAt: string;
-  cover?: ArticleImage; shareImage: string; bodyFormat: Article['bodyFormat']; markdown: string;
+  cover?: ArticleImage; shareImage: { src: string; width?: number; height?: number }; bodyFormat: Article['bodyFormat']; markdown: string;
   body: Article['body']; images: Record<string, ArticleImage>; hasAffiliate: boolean; affiliateLinks: PublicAffiliate[];
 };
 
@@ -53,11 +53,17 @@ async function mapArticles(documents: Article[]): Promise<Resource[]> {
     const savedImages = article.sourceImageMap && typeof article.sourceImageMap === 'object' && !Array.isArray(article.sourceImageMap) ? article.sourceImageMap as Record<string, ArticleImage> : {};
     const sourceImages = Object.fromEntries(Object.entries(savedImages).map(([name, image]) => [name, image?.mediaId ? imagesByID.get(image.mediaId) : image] as const).filter(([, image]) => image && isCDNImage(image.src))) as Record<string, ArticleImage>;
     const linkedIDs = article.affiliateLinks?.map((link) => typeof link === 'number' ? link : link.id) || [];
+    const legacyImage = article.legacyShareImage && isCDNImage(article.legacyShareImage) ? article.legacyShareImage : undefined;
+    const fallbackImage = assetUrl('images/social/mason.png');
+    const shareImage = mediaImage(article.shareImage)
+      || (legacyImage ? { src: legacyImage, ...assetMetadata(legacyImage) } : undefined)
+      || mediaImage(article.cover)
+      || { src: fallbackImage, ...assetMetadata(fallbackImage) };
     return [{
       id: article.id, slug: article.slug, category: article.category.slug, title: article.title, summary: article.summary,
       seoTitle: article.seoTitle || article.title, seoDescription: article.seoDescription || article.summary,
       status: 'ready' as const, recordedAt: article.recordedAt || '', updatedAt: article.updatedAt,
-      cover: mediaImage(article.cover), shareImage: mediaImage(article.shareImage)?.src || (article.legacyShareImage && isCDNImage(article.legacyShareImage) ? article.legacyShareImage : assetUrl('images/social/mason.png')),
+      cover: mediaImage(article.cover), shareImage,
       bodyFormat: article.bodyFormat, markdown: article.markdown || '', body: article.body,
       images: { ...imageMap, ...sourceImages }, hasAffiliate: Boolean(article.hasAffiliate || linkedIDs.length),
       affiliateLinks: linkedIDs.map((id) => linksByID.get(id)).filter((link) => link !== undefined).map(({ id, name, url, label, code, active, expiresAt }) => ({ id, name, url, label, code, active, expiresAt, available: Boolean(active && (!expiresAt || Date.parse(expiresAt) > Date.now())) })),

@@ -38,6 +38,7 @@ npm run typecheck
 npm test
 npm run check:images
 npm run check:privacy
+python3 scripts/check-seo.py https://0xmason.com
 node scripts/with-ci-env.mjs npm run build
 ```
 
@@ -51,6 +52,12 @@ node scripts/with-ci-env.mjs npm run test:cms
 ```
 
 GitHub 的 `CI` 工作流执行上述检查、依赖审计和 Gitleaks。外部 PR 不接触生产密钥。Payload 3.88.0 的已知 account-unlock 中危公告通过禁用 `unlock` 权限处理，并纳入集成测试；依赖审计阻止高危和严重漏洞。
+
+SEO 检查使用 Python 3 标准库，遍历 sitemap 与页面内链，核对 HTTP 状态、唯一标题和摘要、canonical、robots、H1、移动 viewport、锚点、文章与面包屑结构化数据、CDN 图片、404 和旧地址跳转。CI 验证本机隔离构建的禁止收录状态；每次正式发布后再检查线上全部公开页面。可加 `--report qa/seo/review.json` 保存本地结果。
+
+`/sitemap.xml` 只包含正式发布的文章及有文章的分类，并附文章图片和真实更新时间。后台保存草稿不会把预览放进 sitemap。文章正文、JSON-LD、Open Graph 与 sitemap 使用同一个更新时间；数据库没有可靠的首次发布日期时，不使用创建时间或当天日期代替。
+
+正式域名以外的 Vercel 地址、预览、后台和 API 通过 `X-Robots-Tag` 禁止收录。Search Console 使用 `0xmason.com` 的 DNS 网域验证，并提交 `https://0xmason.com/sitemap.xml`；验证记录保留在域名服务商，代码中不需要 Google token 或追踪脚本。提交成功与网页已收录是两个状态，以 Search Console 的网址检查结果为准。
 
 ## 发布
 

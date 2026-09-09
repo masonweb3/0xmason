@@ -233,7 +233,7 @@ p, h1, h2, h3 { margin: 0; }
 .article-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; color: var(--muted); font-size: 13px; margin-top: 24px; }
 .article-author { display: inline-flex; align-items: center; gap: 10px; color: var(--foreground); font-size: 14px; font-weight: 550; }
 .article-author img { display: block; border-radius: 50%; }
-.article-meta > time, .article-meta > span:last-child { padding-left: 22px; border-left: 1px solid var(--border); }
+.article-meta > :not(:first-child) { padding-left: 22px; border-left: 1px solid var(--border); }
 .article-layout { display: grid; grid-template-columns: minmax(0, 740px) minmax(0, 220px); column-gap: 64px; align-items: start; }
 .article-reading { min-width: 0; }
 .article-cover { display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 32px; }
@@ -378,7 +378,7 @@ p, h1, h2, h3 { margin: 0; }
   .article-header h1 { font-size: 29px; line-height: 1.5; letter-spacing: -0.025em; }
   .article-summary { font-size: 16px; margin-top: 18px; }
   .article-meta { gap: 12px; font-size: 12px; margin-top: 22px; }
-  .article-meta > time, .article-meta > span:last-child { padding-left: 12px; }
+  .article-meta > :not(:first-child) { padding-left: 12px; }
   .article-cover { border-radius: 8px; margin-bottom: 24px; }
   .article-aff { font-size: 12px; margin-bottom: 28px; }
   .article-prose { font-size: 16px; line-height: 1.95; }

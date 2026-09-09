@@ -29,7 +29,7 @@ export default buildConfig({
   }),
   admin: {
     user: 'users',
-    meta: { titleSuffix: ' · Mason 后台', icons: [{ rel: 'icon', url: assetUrl('favicon.ico') }], robots: 'noindex, nofollow' },
+    meta: { titleSuffix: ' · Mason 后台', icons: [{ rel: 'icon', url: assetUrl('favicon.ico') }], robots: 'noindex, nofollow', openGraph: { images: [{ url: assetUrl('images/social/mason.png'), width: 1200, height: 630 }] } },
     importMap: { baseDir: resolve(process.cwd(), 'src') },
     components: { beforeDashboard: ['/cms/components/Welcome#Welcome'] },
   },
