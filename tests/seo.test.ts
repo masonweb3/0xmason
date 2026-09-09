@@ -1,9 +1,20 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
+import { readFileSync } from 'node:fs';
+import { matchesGlob } from 'node:path';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { isIndexingEnabled, pageMetadata, site } from '../src/lib/site';
 import { StructuredData } from '../src/components/structured-data';
+
+test('Vercel excludes preview branches containing slashes while keeping main enabled', () => {
+  const rules = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8')).git.deploymentEnabled as Record<string, boolean>;
+  for (const branch of ['main', 'feature', 'codex/seo-search-console', 'dependabot/npm_and_yarn/example']) {
+    const matches = Object.entries(rules).filter(([pattern]) => matchesGlob(branch, pattern));
+    const enabled = !matches.length || matches.some(([, enabled]) => enabled);
+    assert.equal(enabled, branch === 'main', branch);
+  }
+});
 
 test('indexing requires production and an explicit opt-in', () => {
   for (const VERCEL_ENV of [undefined, 'development', 'preview', 'production']) {
