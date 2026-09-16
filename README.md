@@ -59,6 +59,21 @@ SEO 检查使用 Python 3 标准库，遍历 sitemap 与页面内链，核对 HT
 
 正式域名以外的 Vercel 地址、预览、后台和 API 通过 `X-Robots-Tag` 禁止收录。Search Console 使用 `0xmason.com` 的 DNS 网域验证，并提交 `https://0xmason.com/sitemap.xml`；验证记录保留在域名服务商，代码中不需要 Google token 或追踪脚本。提交成功与网页已收录是两个状态，以 Search Console 的网址检查结果为准。
 
+Search Console 的「网页会自动重定向」用于标记跳转来源。HTTP、www 和旧分类路径保留永久跳转，sitemap 与内链只指向最终的 HTTPS 地址；不把这些来源改成重复的 200 页面，也不对预期跳转发起「验证修正」。真正需要处理的是最终页面抓取失败、重定向循环、错误 canonical 或意外 noindex。
+
+## Google AdSense 上线条件
+
+当前未接入 AdSense 或 Analytics。`/about`、`/contact`、`/privacy`、`/terms` 提供作者、联系、数据处理与推荐关系说明，正文与普通页面一样服务端渲染。新增数据源或广告前，同步更新实际数据处理说明。
+
+- 发布前人工核对内容与截图权利、来源、金额日期和推荐关系。不得教读者虚构住址、税务信息或证明文件；不得承诺审核、返现或投资结果。`noindex`、免责声明或隐藏广告不能使违规内容变得合规。
+- 拿到自己的 AdSense publisher ID 后，使用账号提供的真实条目发布根域 `ads.txt` 并在 AdSense 验证。当前保持 404，不发布示例 ID 或他人的 ID。根域与 CheckIP 使用同一账号时按 Google 的域名规则配置；如子域使用独立卖方清单，再配置根域 `subdomain=` 与子域文件。
+- 个性化广告面向 EEA、英国、瑞士时，先配置 Google 认证且集成 IAB TCF 的 CMP，验证同意、拒绝及撤回行为。普通提示横幅不替代 CMP。其他地区按适用的 Google 政策配置；隐私页不加载需要同意的广告或消息脚本。
+- 广告仅放在审查通过、有实际内容的页面，明确区分广告与正文、推荐入口、导航及操作按钮。不在后台、API、预览、隐私页、错误、加载、空结果或纯导航页面展示广告，不采用要求点击才能使用的设计。
+- 不自点广告、不引导「点击支持」、不购买或制造广告点击流量，不在 URL 或广告请求中发送邮箱、证件、卡号等身份信息。接入时验收移动端遮挡、布局位移、脚本加载和同意前后网络行为。
+- 提交 sitemap、技术检查通过与 AdSense 审核通过是不同结果。按 Search Console 和 AdSense 的实际报告处理，不以固定文章数量或流量数字承诺获批。
+
+依据：[重定向与规范网址](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)、[Google 发布商政策](https://support.google.com/publisherpolicies/answer/10502938)、[隐私政策必需内容](https://support.google.com/adsense/answer/1348695)、[CMP 要求](https://support.google.com/adsense/answer/13554116)、[ads.txt](https://support.google.com/adsense/answer/12171612)。接入时重新核对最新版本。
+
 ## 发布
 
 Vercel 官方 GitHub 集成只构建 `main`，并以三个 Deployment Checks 阻止未通过检查的版本切换域名：`Quality and CMS`、`Secret scan`、`Supabase migration`。前两项检查成功后，GitHub 才执行生产迁移；三项成功且 Vercel 构建就绪后，由 Vercel 发布。`Verify deployment` 工作流等待生产响应中的 `X-Site-Revision` 与已验证提交一致，再检查公开页面、SEO 和后台访问边界。

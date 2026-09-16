@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export function SiteFooter() {
   return (
     <footer className="site-footer container">
@@ -5,6 +7,10 @@ export function SiteFooter() {
       <div className="footer-meta">
         <div className="footer-links">
           <span>0xmason.com</span>
+          <Link href="/about">关于</Link>
+          <Link href="/contact">联系</Link>
+          <Link href="/privacy">隐私政策</Link>
+          <Link href="/terms">使用说明</Link>
           <a
             href="https://checkip.0xmason.com/"
             target="_blank"
