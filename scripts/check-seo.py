@@ -180,6 +180,7 @@ def main():
             target = destination.path or "/"
             if target.startswith(("/admin", "/api", "/preview", "/_next")) or "." in target.rsplit("/", 1)[-1]:
                 continue
+            require("nofollow" not in link.get("rel", "").split(), f"{path}: public internal link marked nofollow: {target}")
             queue.append(target)
         schemas = {schema.get("@type"): schema for schema in page.schemas}
         if path == "/":
@@ -234,7 +235,7 @@ def main():
         for source, target in (("/resources/ai-subscriptions", "/resources/global-accounts"), ("/resources/ai-subscriptions/bybit-eu", "/resources/global-accounts/bybit-eu")):
             status, headers, _ = read(base + source)
             require(status in (301, 308) and urljoin(base, headers.get("location", "")) == base + target, f"Permanent legacy redirect: {source}")
-        for origin in ("http://0xmason.com", "https://www.0xmason.com"):
+        for origin in ("http://0xmason.com", "http://www.0xmason.com", "https://www.0xmason.com"):
             status, headers, _ = read(origin + "/resources?seo-check=1")
             require(status in (301, 308) and headers.get("location") == canonical_base + "/resources?seo-check=1", f"HTTPS/domain redirect preserves path and query: {origin}")
 

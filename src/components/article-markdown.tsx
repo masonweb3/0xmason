@@ -2,6 +2,7 @@ import { CDNImage as Image } from './cdn-image';
 import Markdown, { type Components } from "react-markdown";
 import remarkGfm from 'remark-gfm';
 import { headingId } from "@/lib/article-content";
+import { internalArticleHref } from '@/lib/article-links';
 import type { ArticleImage } from "@/lib/resources";
 
 export function ArticleMarkdown({ content, images, affiliateUrls = [] }: { content: string; images: Record<string, ArticleImage>; affiliateUrls?: string[] }) {
@@ -29,6 +30,8 @@ const components: Components = {
     // GFM includes a following Chinese parenthesis in a literal URL.
     const referral = affiliateUrls.find((url) => href === url || href?.startsWith(`${url}%EF%BC%88`));
     const annotation = referral && typeof children === 'string' && children.startsWith(`${referral}（`) ? children.slice(referral.length) : '';
+    const internal = !referral && internalArticleHref(href);
+    if (internal) return <a href={href?.startsWith('#') ? href : internal}>{children}</a>;
     return <><a href={referral || href} target="_blank" rel={`${referral ? 'sponsored ' : ''}nofollow noopener noreferrer`}>{annotation ? referral : children}</a>{annotation}</>;
   },
   code({ children }) {

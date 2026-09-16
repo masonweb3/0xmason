@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getCategories, getResources, resourceHref } from "@/lib/resources";
 import { absoluteUrl, isIndexingEnabled } from "@/lib/site";
+import { informationPages } from '@/lib/information';
 
 export const dynamic = 'force-dynamic';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -9,6 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     { url: absoluteUrl("/") },
     { url: absoluteUrl("/resources") },
+    ...Object.keys(informationPages).map((slug) => ({ url: absoluteUrl(`/${slug}`) })),
     ...categories.filter((category) => resources.some((article) => article.category === category.slug)).map((category) => ({ url: absoluteUrl(`/resources/${category.slug}`) })),
     ...resources.filter((article) => article.status === "ready").map((article) => ({ url: absoluteUrl(resourceHref(article)), lastModified: article.updatedAt, images: [...new Set([article.shareImage.src, ...(article.cover ? [article.cover.src] : [])])] })),
   ];

@@ -230,6 +230,7 @@ p, h1, h2, h3 { margin: 0; }
 .article-preview .detail-link { margin-top: 14px; }
 
 .article-page { width: min(1080px, calc(100% - 80px)); margin-inline: auto; padding-block: 28px 72px; }
+.information-page { max-width: 780px; }
 .article-header { padding-block: 24px 36px; margin-bottom: 40px; border-bottom: 1px solid var(--border); }
 .article-header h1 { max-width: 920px; font-size: 40px; line-height: 1.5; font-weight: 650; letter-spacing: -0.035em; text-wrap: pretty; }
 .article-summary { max-width: 780px; color: var(--secondary); font-size: 17px; line-height: 1.9; margin-top: 20px; }
