@@ -236,8 +236,14 @@ def main():
             status, headers, _ = read(base + source)
             require(status in (301, 308) and urljoin(base, headers.get("location", "")) == base + target, f"Permanent legacy redirect: {source}")
         for origin in ("http://0xmason.com", "http://www.0xmason.com", "https://www.0xmason.com"):
-            status, headers, _ = read(origin + "/resources?seo-check=1")
-            require(status in (301, 308) and headers.get("location") == canonical_base + "/resources?seo-check=1", f"HTTPS/domain redirect preserves path and query: {origin}")
+            suffix = "/resources?seo-check=1"
+            # Vercel upgrades HTTP on the same host before applying its www redirect.
+            target = "https://www.0xmason.com" if origin == "http://www.0xmason.com" else canonical_base
+            status, headers, _ = read(origin + suffix)
+            require(status in (301, 308) and headers.get("location") == target + suffix, f"HTTPS/domain redirect preserves path and query: {origin}")
+            if target != canonical_base:
+                status, headers, _ = read(target + suffix)
+                require(status in (301, 308) and headers.get("location") == canonical_base + suffix, f"HTTPS www redirect reaches canonical host: {origin}")
 
     report = {"checkedAt": datetime.now(timezone.utc).isoformat(), "origin": base, "mode": "noindex" if args.noindex else "production", "pages": checked, "sitemapURLs": len(sitemap), "images": len(assets), "failures": failures}
     if args.report:
