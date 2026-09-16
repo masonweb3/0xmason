@@ -27,7 +27,7 @@ export const informationPages = {
 
 ## 反馈文章或网站问题
 
-请附上页面网址、问题发生的时间，以及具体段落或报错。网站代码问题也可以在 [GitHub](https://github.com/sabialab/0xmason/issues) 提交 issue。
+请附上页面网址、问题发生的时间，以及具体段落或报错。网站代码问题也可以在 [GitHub](https://github.com/masonweb3/0xmason/issues) 提交 issue。
 
 GitHub issue 是公开的。请不要在反馈中贴护照、完整卡号、验证码、密码、银行文件或其他私密资料；截图先遮住个人信息。
 
