@@ -52,7 +52,7 @@ export default async function Home() {
             <p className="hero-lede">每张卡都自己开过、付过账单。</p>
             <div className="hero-actions">
               <Link className="primary-button" href="/resources/global-accounts">看开卡实测<ArrowRight size={16} weight="bold" aria-hidden="true" /></Link>
-              <a className="secondary-button" href="#cards">卡片速查</a>
+              {!!liveOffers.length && <a className="secondary-button" href="#cards">卡片速查</a>}
             </div>
           </div>
           <div className="hero-stage">
