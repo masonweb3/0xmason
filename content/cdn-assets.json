@@ -1472,5 +1472,16 @@
     "variants": [],
     "sourceSha256": "fb51ff16e8a52a84a7737804547c5c849a3eef1acec206b1927b260c861c0c2a",
     "compressionVersion": "webp-1"
+  },
+  "images/brands/app-hangseng.png": {
+    "key": "site/images/brands/app-hangseng.65564aaa80d2bc53-192w.webp",
+    "sha256": "65564aaa80d2bc53ad355b9b7877e5cef7945ffc0bc2a6fdd179b8e1c68d74c9",
+    "bytes": 4472,
+    "contentType": "image/webp",
+    "width": 192,
+    "height": 192,
+    "variants": [],
+    "sourceSha256": "66c3a181b7888e2c2965a6ca3b762d33929072e72a7a17a6f7eebd1aa8ad9463",
+    "compressionVersion": "webp-1"
   }
 }

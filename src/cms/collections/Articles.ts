@@ -32,6 +32,8 @@ export const Articles: CollectionConfig = {
       { name: 'category', label: '分类', type: 'relationship', relationTo: 'categories', required: true, admin: { width: '50%' } },
     ] },
     { name: 'summary', label: '摘要', type: 'textarea', required: true },
+    { name: 'brands', label: '品牌', type: 'join', collection: 'brands', on: 'articles', defaultLimit: 20,
+      admin: { allowCreate: true, defaultColumns: ['name', 'kind'], description: '首页首屏按这里的品牌加 logo。新品牌点「新建」；已有的品牌到「品牌」里把这篇文章勾上' } },
     { name: 'cover', label: '封面', type: 'upload', relationTo: 'media' },
     { name: 'recordedAt', label: '记录月份', type: 'text', admin: { placeholder: '2026-09' }, validate: (value: string | null | undefined) => !value || /^\d{4}-(0[1-9]|1[0-2])$/.test(value) || '使用 YYYY-MM 格式' },
     { name: 'bodyFormat', label: '正文格式', type: 'radio', defaultValue: 'richtext', required: true, options: [{ label: '图文编辑', value: 'richtext' }, { label: 'Markdown', value: 'markdown' }], admin: { layout: 'horizontal', description: '切换格式不会自动转换已有正文' } },

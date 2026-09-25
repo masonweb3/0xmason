@@ -1,8 +1,10 @@
 import assets from '../../content/cdn-assets.json' with { type: 'json' };
+import type { Media } from '@/payload-types';
 
 export const CDN_ORIGIN = 'https://cdn.0xmason.com';
 export const MEDIA_PREFIX = 'media';
 export type ImageSource = { src: string; width: number };
+export type ArticleImage = { src: string; alt: string; width: number; height: number; mediaId?: number; sources?: ImageSource[] };
 type ManifestAsset = { key: string; width: number; height: number; variants?: { key: string; width: number }[] };
 
 export function assetMetadata(url: string) {
@@ -47,4 +49,15 @@ export function assetUrl(path: string) {
 export function mediaUrl(filename: string, prefix = MEDIA_PREFIX) {
   if (prefix !== MEDIA_PREFIX || /[/\\]/.test(filename)) throw new Error('Invalid media object key.');
   return cdnUrl(`${prefix}/${filename}`);
+}
+
+export function mediaImage(media: number | Media | null | undefined): ArticleImage | undefined {
+  if (!media || typeof media !== 'object' || !media.filename || !media.width || !media.height) return;
+  const src = mediaUrl(media.filename, media.prefix || undefined);
+  const sources = new Map<number, ImageSource>();
+  for (const size of Object.values(media.sizes || {})) {
+    if (size?.filename && size.width && size.width < media.width) sources.set(size.width, { src: mediaUrl(size.filename), width: size.width });
+  }
+  sources.set(media.width, { src, width: media.width });
+  return { src, alt: media.alt, width: media.width, height: media.height, mediaId: media.id, sources: [...sources.values()] };
 }

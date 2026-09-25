@@ -14,6 +14,7 @@ import { Articles } from './cms/collections/Articles';
 import { Categories } from './cms/collections/Categories';
 import { Media } from './cms/collections/Media';
 import { AffiliateLinks } from './cms/collections/AffiliateLinks';
+import { Brands } from './cms/collections/Brands';
 
 const storage = r2StorageConfig();
 
@@ -35,7 +36,7 @@ export default buildConfig({
   },
   i18n: { supportedLanguages: { zh, en }, fallbackLanguage: 'zh' },
   editor: lexicalEditor({ features: ({ defaultFeatures }) => [...defaultFeatures, FixedToolbarFeature()] }),
-  collections: [Articles, Categories, Media, AffiliateLinks, Users],
+  collections: [Articles, Categories, Brands, Media, AffiliateLinks, Users],
   db: postgresAdapter({ pool: databasePool, schemaName: 'cms', push: false, migrationDir: resolve(process.cwd(), 'src/cms/migrations') }),
   typescript: { outputFile: resolve(process.cwd(), 'src/payload-types.ts') },
   graphQL: { disable: true },

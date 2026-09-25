@@ -4,14 +4,16 @@ import { CDNImage as Image } from '@/components/cdn-image';
 import { CopyCode } from "@/components/copy-code";
 import { StructuredData } from "@/components/structured-data";
 import { BrandIcon, OfferCard, PostCard } from "@/components/cards";
-import { getCategories, getResources, resourceHref } from "@/lib/resources";
+import { getCategories, getHeroBrands, getResources, resourceHref } from "@/lib/resources";
 import { pageMetadata, site } from "@/lib/site";
 import { assetUrl } from '@/lib/cdn';
-import { brandNames, cardImage, esimGuides, esimWall, heroCards, heroChips, marquee, offers, saily } from "@/lib/offers";
+import { brandNames, esimGuides, esimWall, heroGroups, marquee, offers, saily } from "@/lib/offers";
 
 export const metadata = { ...pageMetadata({ title: site.title, description: site.description, path: "/" }), title: { absolute: site.title } };
 
 const REVIEW_SLUG = 'opus-5-5-vs-gpt-6-astra';
+const FAN_CARDS = 5; // the fan has hand-tuned slots for five cards
+const CHIP_ICONS = 6; // past this, the last slot becomes +N
 // Numbers from the review article itself; the winner of each row is highlighted.
 const reviewRows = [
   { label: '三轮耗时', opus: '4 小时 12 分', astra: '1 小时 9 分', winner: 'astra' },
@@ -20,7 +22,8 @@ const reviewRows = [
 ];
 
 export default async function Home() {
-  const [categories, resources] = await Promise.all([getCategories(), getResources()]);
+  const [categories, resources, brands] = await Promise.all([getCategories(), getResources(), getHeroBrands()]);
+  const fanCards = brands.filter((brand) => brand.card).slice(0, FAN_CARDS).reverse();
   const categoryTitle = new Map(categories.map((category) => [category.slug, category.title]));
   const review = resources.find((resource) => resource.slug === REVIEW_SLUG);
   const latest = resources.filter((resource) => resource.slug !== REVIEW_SLUG).slice(0, 6);
@@ -48,15 +51,24 @@ export default async function Home() {
             </div>
           </div>
           <div className="hero-stage">
-            <div className="hero-fan" aria-hidden="true">
-              {heroCards.map((card) => <Image key={card} src={cardImage(card)} alt="" width={856} height={540} preload={card === 'starryblu'} loading="eager" sizes="(max-width: 767px) 200px, 360px" />)}
+            {!!fanCards.length && <div className="hero-fan" aria-hidden="true">
+              {fanCards.map(({ id, card }, index) => card && <Image key={id} src={card.src} sources={card.sources} alt="" width={card.width || 856} height={card.height || 540} preload={index === fanCards.length - 1} loading="eager" sizes="(max-width: 767px) 210px, 330px" />)}
+            </div>}
+            <div className="hero-chips">
+              {heroGroups.map(({ kind, title, unit }) => {
+                const group = brands.filter((brand) => brand.kind === kind);
+                const shown = group.length > CHIP_ICONS ? group.slice(0, CHIP_ICONS - 1) : group;
+                return !!group.length && (
+                  <div className="hero-chip" key={kind}>
+                    <p><strong>{title}</strong>{group.length} {unit}</p>
+                    <span className="hero-chip-icons" aria-hidden="true">
+                      {shown.map(({ id, icon }) => <Image className="brand-icon" key={id} src={icon.src} sources={icon.sources} alt="" width={192} height={192} loading="eager" sizes="28px" />)}
+                      {shown.length < group.length && <span className="hero-chip-more">+{group.length - shown.length}</span>}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
-            {heroChips.map((chip) => (
-              <div className="hero-chip" key={chip.title}>
-                <span className="hero-chip-icons" aria-hidden="true">{chip.icons.map((name) => <BrandIcon name={name} size={36} key={name} />)}</span>
-                <span className="hero-chip-copy"><strong>{chip.title}</strong>{chip.note}</span>
-              </div>
-            ))}
           </div>
         </div>
         <div className="marquee" aria-label="站内教程涉及的卡和服务">

@@ -3,6 +3,7 @@ import * as migration_20260909_163849_merge_payment_categories from './20260909_
 import * as migration_20260909_170323_responsive_webp_images from './20260909_170323_responsive_webp_images';
 import * as migration_20260910_000000_private_cms_access from './20260910_000000_private_cms_access';
 import * as migration_20260925_120000_ai_reviews_category from './20260925_120000_ai_reviews_category';
+import * as migration_20260925_141228_brands from './20260925_141228_brands';
 
 export const migrations = [
   {
@@ -18,7 +19,7 @@ export const migrations = [
   {
     up: migration_20260909_170323_responsive_webp_images.up,
     down: migration_20260909_170323_responsive_webp_images.down,
-    name: '20260909_170323_responsive_webp_images'
+    name: '20260909_170323_responsive_webp_images',
   },
   {
     up: migration_20260910_000000_private_cms_access.up,
@@ -29,5 +30,10 @@ export const migrations = [
     up: migration_20260925_120000_ai_reviews_category.up,
     down: migration_20260925_120000_ai_reviews_category.down,
     name: '20260925_120000_ai_reviews_category',
+  },
+  {
+    up: migration_20260925_141228_brands.up,
+    down: migration_20260925_141228_brands.down,
+    name: '20260925_141228_brands',
   },
 ];

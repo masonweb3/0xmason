@@ -2,7 +2,7 @@ import { CDNImage as Image } from './cdn-image';
 import { RichText, type JSXConvertersFunction } from '@payloadcms/richtext-lexical/react';
 import type { Article, Media } from '@/payload-types';
 import { headingId } from '@/lib/article-content';
-import { mediaImage } from '@/lib/resources';
+import { mediaImage } from '@/lib/cdn';
 
 type TextNode = { text?: string; children?: TextNode[]; type?: string; tag?: string };
 export function nodeText(node: TextNode): string { return node.text || node.children?.map(nodeText).join('') || ''; }
