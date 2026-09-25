@@ -16,7 +16,7 @@ export const offers: Offer[] = [
   { slug: 'gate-card', name: 'Gate U 卡', brand: 'app-gate', card: 'gate', cardAlt: 'Gate Visa Platinum 卡', requirement: '大陆身份证可开',
     figure: '1%', figureNote: '日常返现，月封顶 5U', perk: '美元账单按原价扣，无外汇费', code: 'VFYXVVSOAA' },
   { slug: 'mexc-card', name: 'MEXC 黑卡', brand: 'app-mexc', card: 'mexc', cardAlt: 'MEXC Visa Platinum 黑卡', requirement: '中国护照可开',
-    figure: '4%', figureNote: '返现起步，月封顶 100U', perk: '开卡费、年费、充值费全免', code: '45Nji' },
+    figure: '4%', figureNote: '返现起步，月封顶 100U', perk: '开卡费、年费、充值费全免', code: 'mexc-0xmason' },
 ];
 
 export const saily = { slug: 'saily', title: 'Saily 美国手机号', note: '开通、Apple Pay 扣款、号段查询与接码实测。', price: '$6.99', priceNote: '首年年付', code: '0XMASON' };
