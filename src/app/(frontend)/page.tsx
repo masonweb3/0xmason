@@ -5,11 +5,10 @@ import { CopyCode } from "@/components/copy-code";
 import { StructuredData } from "@/components/structured-data";
 import { BrandIcon, OfferCard, PostCard } from "@/components/cards";
 import { getCategories, getHeroBrands, getResources, resourceHref } from "@/lib/resources";
-import { pageMetadata, site } from "@/lib/site";
-import { assetUrl } from '@/lib/cdn';
+import { author, pageMetadata, site } from "@/lib/site";
 import { brandNames, esimGuides, esimWall, heroGroups, marquee, offers, saily } from "@/lib/offers";
 
-export const metadata = { ...pageMetadata({ title: site.title, description: site.description, path: "/" }), title: { absolute: site.title } };
+export const metadata = pageMetadata({ title: site.title, description: site.description, path: "/" });
 
 const REVIEW_SLUG = 'opus-5-5-vs-gpt-6-astra';
 const FAN_CARDS = 5; // the fan has hand-tuned slots for five cards
@@ -40,7 +39,7 @@ export default async function Home() {
         "@context": "https://schema.org",
         "@graph": [
           { "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, alternateName: "0xmason", description: site.description, inLanguage: "zh-CN", publisher: { "@id": `${site.url}/#person` } },
-          { "@type": "Person", "@id": `${site.url}/#person`, name: site.name, url: site.url, image: assetUrl('images/avatar.png'), sameAs: [site.social] },
+          author,
         ],
       }} />
 

@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const { category } = await params;
   const current = await getCategory(category);
   if (!current) notFound();
-  return pageMetadata({ title: `${current.title} · 文章目录`, description: current.description, path: `/resources/${current.slug}`, indexable: (await getCategoryResources(current.slug)).length > 0 });
+  return pageMetadata({ title: `${current.title}：${current.summary}`, description: current.description, path: `/resources/${current.slug}`, indexable: (await getCategoryResources(current.slug)).length > 0 });
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {

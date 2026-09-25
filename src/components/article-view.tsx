@@ -9,7 +9,7 @@ import { CopyCode } from './copy-code';
 import { StructuredData } from './structured-data';
 import { parseArticleContent } from '@/lib/article-content';
 import { resourceHref, type Category, type Resource } from '@/lib/resources';
-import { absoluteUrl, breadcrumbs, site } from '@/lib/site';
+import { absoluteUrl, author, breadcrumbs } from '@/lib/site';
 import { assetUrl } from '@/lib/cdn';
 import { offers } from '@/lib/offers';
 
@@ -22,7 +22,7 @@ export function ArticleView({ article, category, related = [], preview = false }
   return <main id="main-content" className="article-page">
     {preview ? <aside className="container preview-banner">文章预览 · 仅管理员可见 <Link href={`/admin/collections/articles/${article.id}`}>返回编辑</Link></aside> : <>
       <StructuredData value={breadcrumbs([{ name: '首页', path: '/' }, { name: '精选资源', path: '/resources' }, { name: category.title, path: directoryHref }, { name: article.title, path: resourceHref(article) }])} />
-      <StructuredData value={{ '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': `${absoluteUrl(resourceHref(article))}#article`, headline: article.title, description: article.seoDescription, inLanguage: 'zh-CN', mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(resourceHref(article)) }, image: [...new Set([article.shareImage.src, ...(article.cover ? [article.cover.src] : [])])], dateModified: article.updatedAt, author: { '@type': 'Person', '@id': `${site.url}/#person`, name: site.name, url: site.url, sameAs: [site.social] }, publisher: { '@type': 'Person', '@id': `${site.url}/#person`, name: site.name, url: site.url }, isAccessibleForFree: true, articleSection: category.title }} />
+      <StructuredData value={{ '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': `${absoluteUrl(resourceHref(article))}#article`, headline: article.title, description: article.seoDescription, inLanguage: 'zh-CN', mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(resourceHref(article)) }, image: [...new Set([article.shareImage.src, ...(article.cover ? [article.cover.src] : [])])], dateModified: article.updatedAt, author, publisher: author, isAccessibleForFree: true, articleSection: category.title }} />
     </>}
     <div className="container">
       <div className="article-columns">
@@ -31,7 +31,7 @@ export function ArticleView({ article, category, related = [], preview = false }
           <h1>{article.title}</h1>
           <p className="article-summary">{article.summary}</p>
           <div className="article-meta">
-            <span className="article-author"><Image src={assetUrl('images/avatar.png')} width={32} height={32} alt="" sizes="32px" />Mason</span>
+            <Link className="article-author" href="/about" rel="author"><Image src={assetUrl('images/avatar.png')} width={32} height={32} alt="" sizes="32px" />Mason</Link>
             {article.recordedAt && <time dateTime={article.recordedAt}>{article.recordedAt}</time>}
             <span>约 {content.readingMinutes} 分钟</span>
             <span>更新于 <time dateTime={article.updatedAt}>{updated}</time></span>

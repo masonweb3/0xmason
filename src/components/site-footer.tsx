@@ -15,6 +15,7 @@ export function SiteFooter() {
             <Link href="/contact">联系</Link>
             <Link href="/privacy">隐私政策</Link>
             <Link href="/terms">使用说明</Link>
+            <a href="/feed.xml">RSS</a>
             <a
               href="https://checkip.0xmason.com/"
               target="_blank"
