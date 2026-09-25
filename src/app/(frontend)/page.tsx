@@ -28,6 +28,11 @@ export default async function Home() {
   const review = resources.find((resource) => resource.slug === REVIEW_SLUG);
   const latest = resources.filter((resource) => resource.slug !== REVIEW_SLUG).slice(0, 6);
   const esimHref = (slug: string) => resourceHref({ category: 'esim', slug });
+  // The quick-reference data is hard-coded; only link to articles that are actually published.
+  const published = new Set(resources.map(resourceHref));
+  const liveOffers = offers.filter((offer) => published.has(resourceHref({ category: 'global-accounts', slug: offer.slug })));
+  const liveGuides = esimGuides.filter((guide) => published.has(esimHref(guide.slug)));
+  const sailyLive = published.has(esimHref(saily.slug));
 
   return (
     <main id="main-content" className="homepage">
@@ -82,20 +87,20 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="container home-section" id="cards" aria-labelledby="cards-heading">
+      {!!liveOffers.length && <section className="container home-section" id="cards" aria-labelledby="cards-heading">
         <div className="section-head">
           <h2 id="cards-heading">卡片速查</h2>
           <p>每张卡的返现和优势，点进去是完整的开卡教程。</p>
         </div>
         <div className="offer-grid">
-          {offers.map((offer) => (
+          {liveOffers.map((offer) => (
             <OfferCard offer={offer} key={offer.slug} />
           ))}
         </div>
         <p className="disclosure">推广 · 通过邀请码开卡我可能获得奖励</p>
-      </section>
+      </section>}
 
-      <section className="container home-section" aria-labelledby="esim-heading">
+      {(sailyLive || !!liveGuides.length) && <section className="container home-section" aria-labelledby="esim-heading">
         <div className="section-head">
           <h2 id="esim-heading">eSIM 速查</h2>
           <p>海外号码的开通、写卡和保号。</p>
@@ -107,7 +112,7 @@ export default async function Home() {
             ))}
           </div>
           <div className="esim-list">
-            <article className="esim-featured">
+            {sailyLive && <article className="esim-featured">
               <BrandIcon name="saily" size={28} />
               <div className="esim-featured-main">
                 <div>
@@ -120,8 +125,8 @@ export default async function Home() {
                 <CopyCode code={saily.code} label="Saily 优惠码" className="code-button-fill" />
                 <span className="disclosure">推广 · 用优惠码下单我可能获得奖励</span>
               </div>
-            </article>
-            {esimGuides.map((guide) => (
+            </article>}
+            {liveGuides.map((guide) => (
               <Link className="esim-row" href={esimHref(guide.slug)} key={guide.slug}>
                 <span className="esim-row-copy">
                   <span className="esim-logos">{guide.brands.map((name) => <BrandIcon name={name} size={28} alt={brandNames[name]} key={name} />)}</span>
@@ -133,7 +138,7 @@ export default async function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
       {!!latest.length && <section className="container home-section" aria-labelledby="latest-heading">
         <div className="section-head section-head-row">
