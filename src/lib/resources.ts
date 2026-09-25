@@ -89,7 +89,3 @@ export function categoryCount(articles: Resource[], category: CategorySlug) {
   const count = articles.filter((article) => article.category === category).length;
   return count ? `${count} 篇文章` : '文章准备中';
 }
-export function recordedMonth(value: string) {
-  const match = /^(\d{4})-(\d{2})$/.exec(value);
-  return match ? `${match[1]} 年 ${Number(match[2])} 月` : '';
-}

@@ -183,7 +183,7 @@ export interface Article {
 export interface Category {
   id: number;
   title: string;
-  slug: 'global-accounts' | 'esim';
+  slug: 'global-accounts' | 'esim' | 'ai-reviews';
   summary: string;
   description: string;
   sortOrder: number;
