@@ -57,10 +57,6 @@ export default async function Home() {
                 <span className="hero-chip-copy"><strong>{chip.title}</strong>{chip.note}</span>
               </div>
             ))}
-            <div className="stat-chip">
-              <span className="stat-figure">$200</span>
-              <span className="stat-note">每月用 Starryblu 付 Claude Max</span>
-            </div>
           </div>
         </div>
         <div className="marquee" aria-label="站内教程涉及的卡和服务">
