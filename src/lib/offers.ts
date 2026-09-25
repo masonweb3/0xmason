@@ -35,7 +35,7 @@ export const esimGuides = [
 export const esimWall = [['saily', '3hk', 'o2'], ['dito', 'maya', 'lebara'], ['xesim', 'clubsim', 'csl']];
 
 // Hero stage: U-card fan (back to front) plus one floating chip per other topic.
-export const heroCards = ['mexc', 'gate', 'starryblu'];
+export const heroCards = ['bybit-eu', 'mexc', 'gate', 'starryblu'];
 export const heroChips = [
   { title: '全球账户', note: '香港 · 澳门 · 新加坡', icons: ['zabank', 'antbank', 'hsbc'] },
   { title: 'eSIM', note: '美国 · 香港 · 菲律宾 · 英国', icons: ['saily', 'csl', 'dito', 'lebara'] },
