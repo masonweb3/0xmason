@@ -40,4 +40,9 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withPayload(nextConfig);
+const config = withPayload(nextConfig);
+const payloadHeaders = config.headers!;
+// Payload adds Critical-CH for its admin theme on every path, which makes Chrome fetch a visitor's first page twice.
+config.headers = async () => (await payloadHeaders()).map((rule) => rule.headers.some(({ key }) => key === 'Critical-CH') ? { ...rule, source: '/admin/:path*' } : rule);
+
+export default config;

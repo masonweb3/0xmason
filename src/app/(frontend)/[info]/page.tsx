@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArticleMarkdown } from '@/components/article-markdown';
 import { StructuredData } from '@/components/structured-data';
 import { informationPage } from '@/lib/information';
-import { breadcrumbs, pageMetadata } from '@/lib/site';
+import { author, breadcrumbs, pageMetadata } from '@/lib/site';
 
 type Props = { params: Promise<{ info: string }> };
 
@@ -21,6 +21,7 @@ export default async function InformationPage({ params }: Props) {
   if (!page) notFound();
   return <main id="main-content" className="article-page information-page">
     <StructuredData value={breadcrumbs([{ name: '首页', path: '/' }, { name: page.title, path: `/${info}` }])} />
+    {info === 'about' && <StructuredData value={{ '@context': 'https://schema.org', '@type': 'ProfilePage', mainEntity: author }} />}
     <Link href="/" className="back-link">← 返回首页</Link>
     <header className="article-header">
       <h1>{page.title}</h1>
