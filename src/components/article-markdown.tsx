@@ -3,6 +3,7 @@ import Markdown, { type Components } from "react-markdown";
 import remarkGfm from 'remark-gfm';
 import { headingId } from "@/lib/article-content";
 import { internalArticleHref } from '@/lib/article-links';
+import { isCDNVideo } from '@/lib/cdn';
 import type { ArticleImage } from "@/lib/resources";
 
 export function ArticleMarkdown({ content, images, affiliateUrls = [] }: { content: string; images: Record<string, ArticleImage>; affiliateUrls?: string[] }) {
@@ -15,6 +16,13 @@ const components: Components = {
     return containsImage ? <div className="article-image-paragraph">{children}</div> : <p>{children}</p>;
   },
   img({ src, alt }) {
+    // `![说明](https://cdn.0xmason.com/….mp4)` embeds a video; #t=0.1 gives iOS a first frame.
+    if (typeof src === "string" && isCDNVideo(src)) return (
+      <figure className="article-figure">
+        <video src={`${src}#t=0.1`} controls playsInline preload="metadata" aria-label={alt} />
+        <figcaption>{alt}</figcaption>
+      </figure>
+    );
     const image = typeof src === "string" ? images[src] : undefined;
     if (!image) return <span className="article-note">{alt || "图片"}（请先添加到媒体库）</span>;
     return (

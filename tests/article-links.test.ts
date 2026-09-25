@@ -28,3 +28,12 @@ test('rendered article links distinguish editorial cross-links from paid referra
   assert.match(html, /href="https:\/\/shop\.example\/ref" target="_blank" rel="sponsored nofollow noopener noreferrer"/);
   assert.match(html, /href="https:\/\/source\.example\/" target="_blank" rel="nofollow noopener noreferrer"/);
 });
+
+test('CDN mp4 embeds render as videos; other sources stay images', () => {
+  const html = renderToStaticMarkup(createElement(ArticleMarkdown, {
+    content: '![并排版](https://cdn.0xmason.com/media/video/a.mp4)\n\n![外站](https://other.example/a.mp4)',
+    images: {},
+  }));
+  assert.match(html, /<video src="https:\/\/cdn\.0xmason\.com\/media\/video\/a\.mp4#t=0\.1" controls="" playsInline="" preload="metadata" aria-label="并排版"><\/video><figcaption>并排版<\/figcaption>/);
+  assert.doesNotMatch(html, /other\.example[^"]*"[^>]*controls/);
+});

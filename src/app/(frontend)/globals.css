@@ -282,7 +282,8 @@ p, h1, h2, h3 { margin: 0; }
 .article-figure { margin: 36px auto; }
 .article-figure-portrait { max-width: 420px; }
 .article-figure a { display: block; }
-.article-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; }
+.article-figure img, .article-figure video { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; }
+.article-figure video { background: #000; }
 .article-figure figcaption { font-size: 12px; line-height: 1.7; color: var(--muted); margin-top: 12px; text-align: center; }
 .article-links { display: grid; gap: 24px; margin-block: 48px 32px; padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
 .article-link + .article-link { padding-top: 24px; border-top: 1px solid var(--border); }
