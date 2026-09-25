@@ -49,8 +49,8 @@ export function ThemeToggle() {
         aria-controls="theme-options"
         title="选择网站主题"
       >
-        <Moon size={23} className="light-only" aria-hidden="true" />
-        <Sun size={23} className="dark-only" aria-hidden="true" />
+        <Moon size={18} className="light-only" aria-hidden="true" />
+        <Sun size={18} className="dark-only" aria-hidden="true" />
       </button>
       {open && (
         <div className="theme-menu" id="theme-options" role="group" aria-label="网站外观">

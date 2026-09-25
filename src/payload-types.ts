@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     articles: Article;
     categories: Category;
+    brands: Brand;
     media: Media;
     'affiliate-links': AffiliateLink;
     users: User;
@@ -77,10 +78,15 @@ export interface Config {
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  collectionsJoins: {};
+  collectionsJoins: {
+    articles: {
+      brands: 'brands';
+    };
+  };
   collectionsSelect: {
     articles: ArticlesSelect<false> | ArticlesSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    brands: BrandsSelect<false> | BrandsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'affiliate-links': AffiliateLinksSelect<false> | AffiliateLinksSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
@@ -135,6 +141,14 @@ export interface Article {
   slug: string;
   category: number | Category;
   summary: string;
+  /**
+   * 首页首屏按这里的品牌加 logo。新品牌点「新建」；已有的品牌到「品牌」里把这篇文章勾上
+   */
+  brands?: {
+    docs?: (number | Brand)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
   cover?: (number | null) | Media;
   recordedAt?: string | null;
   /**
@@ -183,10 +197,34 @@ export interface Article {
 export interface Category {
   id: number;
   title: string;
-  slug: 'global-accounts' | 'esim';
+  slug: 'global-accounts' | 'esim' | 'ai-reviews';
   summary: string;
   description: string;
   sortOrder: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * 首页首屏自动读取：已发布文章关联的品牌会出现在对应浮层里，最新建的排最前；U 卡的卡面进扇形
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "brands".
+ */
+export interface Brand {
+  id: number;
+  name: string;
+  kind: 'card' | 'account' | 'esim';
+  /**
+   * 方形 App 图标，至少 192×192，不用自己切圆角
+   */
+  logo?: (number | null) | Media;
+  /**
+   * 卡片正面平放，透明圆角背景，宽 800 以上；不传就只出现在 U 卡浮层里
+   */
+  cardImage?: (number | null) | Media;
+  articles?: (number | Article)[] | null;
+  iconAsset?: string | null;
+  cardAsset?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -324,6 +362,10 @@ export interface PayloadLockedDocument {
         value: number | Category;
       } | null)
     | ({
+        relationTo: 'brands';
+        value: number | Brand;
+      } | null)
+    | ({
         relationTo: 'media';
         value: number | Media;
       } | null)
@@ -386,6 +428,7 @@ export interface ArticlesSelect<T extends boolean = true> {
   slug?: T;
   category?: T;
   summary?: T;
+  brands?: T;
   cover?: T;
   recordedAt?: T;
   bodyFormat?: T;
@@ -412,6 +455,21 @@ export interface CategoriesSelect<T extends boolean = true> {
   summary?: T;
   description?: T;
   sortOrder?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "brands_select".
+ */
+export interface BrandsSelect<T extends boolean = true> {
+  name?: T;
+  kind?: T;
+  logo?: T;
+  cardImage?: T;
+  articles?: T;
+  iconAsset?: T;
+  cardAsset?: T;
   updatedAt?: T;
   createdAt?: T;
 }

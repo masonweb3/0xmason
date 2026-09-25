@@ -1,35 +1,24 @@
 import { CDNImage as Image } from './cdn-image';
 import type { CategorySlug } from "@/lib/resources";
-import { assetUrl } from '@/lib/cdn';
+import { brandIcon, cardImage } from '@/lib/offers';
 
-const brandGroups = {
-  esim: [
-    { name: "Vodafone", file: "vodafone.svg", className: "brand-vodafone" },
-    { name: "giffgaff", file: "giffgaff.svg", className: "brand-giffgaff" },
-    { name: "Tello", file: "tello.png", className: "brand-tello" },
-  ],
+// Decorative: the category title sits next to it. Unknown categories render an empty tile instead of failing.
+const icons: Partial<Record<CategorySlug, string[]>> = {
+  esim: ['saily', 'xesim', 'dito', 'csl'],
+  'ai-reviews': ['claude', 'chatgpt'],
 };
 
-export function CategoryArtwork({ category, sizes = "(max-width: 767px) 90vw, 380px" }: {
-  category: CategorySlug;
-  sizes?: string;
-}) {
-  if (category === "global-accounts") {
+export function CategoryArtwork({ category }: { category: CategorySlug }) {
+  if (category === 'global-accounts') {
     return (
-      <div className="category-artwork card-artwork">
-        <Image src={assetUrl('images/global-cards.png')} alt="Starryblu、Bybit EU、RedotPay 三张卡片的分类插图" fill sizes={sizes} />
+      <div className="category-artwork artwork-cards" aria-hidden="true">
+        {['mexc', 'bybit-eu', 'starryblu'].map((card) => <Image key={card} src={cardImage(card)} alt="" width={856} height={540} sizes="112px" />)}
       </div>
     );
   }
   return (
-    <div className={`category-artwork logo-artwork logo-artwork-${category}`}>
-      <div className="logo-cluster">
-        {brandGroups[category].map((brand) => (
-          <div className={`brand-tile ${brand.className}`} key={brand.name}>
-            <Image src={assetUrl(`images/brands/${brand.file}`)} alt={`${brand.name} 标志`} width={100} height={100} sizes="100px" />
-          </div>
-        ))}
-      </div>
+    <div className="category-artwork artwork-icons" aria-hidden="true">
+      {(icons[category] || []).map((name) => <Image className="brand-icon" key={name} src={brandIcon(name)} alt="" width={192} height={192} sizes="48px" />)}
     </div>
   );
 }

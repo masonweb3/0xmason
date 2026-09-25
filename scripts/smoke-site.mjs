@@ -36,7 +36,7 @@ for (const path of articles) {
   assert.match(response.body, /BlogPosting/, `${path} structured data`);
   console.log(`PASS ${path}`);
 }
-for (const path of ['/api/users', '/api/affiliate-links']) {
+for (const path of ['/api/users', '/api/affiliate-links', '/api/brands']) {
   const response = await read(path);
   assert.ok([401, 403].includes(response.status), `${path} rejects anonymous access`);
   console.log(`PASS ${path} access boundary`);

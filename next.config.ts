@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
     return [
       ...(revision && /^[a-f0-9]{40}$/.test(revision) ? [{ source: '/:path*', headers: [{ key: 'X-Site-Revision', value: revision }] }] : []),
       ...(!isIndexingEnabled() ? [{ source: '/:path*', headers: noindex }] : [
-        ...['/admin/:path*', '/api/:path*', '/preview/:path*'].map((source) => ({ source, headers: noindex })),
+        ...['/admin/:path*', '/api/:path*', '/preview/:path*', '/styleguide'].map((source) => ({ source, headers: noindex })),
         { source: '/:path*', has: [{ type: 'host' as const, value: '.*\\.vercel\\.app' }], headers: noindex },
       ]),
     ];
