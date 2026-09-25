@@ -10,7 +10,8 @@ export const Brands: CollectionConfig = {
     useAsTitle: 'name', group: '内容', defaultColumns: ['name', 'kind', 'articles', 'createdAt'],
     description: '首页首屏自动读取：已发布文章关联的品牌会出现在对应浮层里，最新建的排最前；U 卡的卡面进扇形',
   },
-  access: { read: () => true, create: isAdmin, update: isAdmin, delete: isAdmin },
+  // Not public: the article list would reveal drafts. The homepage reads it server-side.
+  access: { read: isAdmin, create: isAdmin, update: isAdmin, delete: isAdmin },
   defaultSort: '-createdAt',
   fields: [
     { type: 'row', fields: [

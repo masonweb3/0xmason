@@ -71,7 +71,7 @@ export const getHeroBrands = cache(async (): Promise<HeroBrand[]> => {
   try {
     const payload = await cms();
     const [brands, resources] = await Promise.all([
-      payload.find({ collection: 'brands', sort: '-createdAt', pagination: false, depth: 1, populate: { articles: { slug: true } }, overrideAccess: false }),
+      payload.find({ collection: 'brands', sort: '-createdAt', pagination: false, depth: 1, populate: { articles: { slug: true } }, overrideAccess: true }),
       getResources(),
     ]);
     return heroBrands(brands.docs, new Set(resources.map((resource) => resource.id)));
