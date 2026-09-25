@@ -1439,5 +1439,38 @@
     "variants": [],
     "sourceSha256": "11e8083d11790453519c6b30e4855024d1741031e3d2a02557e2c6fb4ae4d472",
     "compressionVersion": "webp-1"
+  },
+  "images/brands/app-zabank.png": {
+    "key": "site/images/brands/app-zabank.0548632c52ee057f-192w.webp",
+    "sha256": "0548632c52ee057f95809bc61f4080da228f36abc04350a5de18bf057803698b",
+    "bytes": 1496,
+    "contentType": "image/webp",
+    "width": 192,
+    "height": 192,
+    "variants": [],
+    "sourceSha256": "bca16c5bac7525fa1a3dd7259697a4d9ab8ed1b5a5c1dde807f8c551f1e5b127",
+    "compressionVersion": "webp-1"
+  },
+  "images/brands/app-antbank.png": {
+    "key": "site/images/brands/app-antbank.4a49857fecadf660-192w.webp",
+    "sha256": "4a49857fecadf6604f2b81fe72a5928680e04836a40e7f239f248c7d516ae392",
+    "bytes": 3302,
+    "contentType": "image/webp",
+    "width": 192,
+    "height": 192,
+    "variants": [],
+    "sourceSha256": "1f8002e1056e0f947676d9d9c684a9d6b52f48386a365fdad4d53a88ad436994",
+    "compressionVersion": "webp-1"
+  },
+  "images/brands/app-hsbc.png": {
+    "key": "site/images/brands/app-hsbc.8a7dfe629ac54f51-192w.webp",
+    "sha256": "8a7dfe629ac54f511ca6943f068c9cb11ec4fc028eb9a09ddc04a01a34bc4122",
+    "bytes": 1898,
+    "contentType": "image/webp",
+    "width": 192,
+    "height": 192,
+    "variants": [],
+    "sourceSha256": "fb51ff16e8a52a84a7737804547c5c849a3eef1acec206b1927b260c861c0c2a",
+    "compressionVersion": "webp-1"
   }
 }

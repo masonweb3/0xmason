@@ -7,7 +7,7 @@ import { BrandIcon, OfferCard, PostCard } from "@/components/cards";
 import { getCategories, getResources, resourceHref } from "@/lib/resources";
 import { pageMetadata, site } from "@/lib/site";
 import { assetUrl } from '@/lib/cdn';
-import { brandNames, esimGuides, esimWall, marquee, offers, saily } from "@/lib/offers";
+import { brandNames, cardImage, esimGuides, esimWall, heroCards, heroChips, marquee, offers, saily } from "@/lib/offers";
 
 export const metadata = { ...pageMetadata({ title: site.title, description: site.description, path: "/" }), title: { absolute: site.title } };
 
@@ -48,7 +48,15 @@ export default async function Home() {
             </div>
           </div>
           <div className="hero-stage">
-            <Image className="hero-card" src={assetUrl('images/home/starryblu-float.png')} alt="Starryblu Saturn 万事达卡" width={810} height={563} preload sizes="(max-width: 767px) 330px, 560px" />
+            <div className="hero-fan" aria-hidden="true">
+              {heroCards.map((card) => <Image key={card} src={cardImage(card)} alt="" width={856} height={540} preload={card === 'starryblu'} loading="eager" sizes="(max-width: 767px) 200px, 360px" />)}
+            </div>
+            {heroChips.map((chip) => (
+              <div className="hero-chip" key={chip.title}>
+                <span className="hero-chip-icons" aria-hidden="true">{chip.icons.map((name) => <BrandIcon name={name} size={36} key={name} />)}</span>
+                <span className="hero-chip-copy"><strong>{chip.title}</strong>{chip.note}</span>
+              </div>
+            ))}
             <div className="stat-chip">
               <span className="stat-figure">$200</span>
               <span className="stat-note">每月用 Starryblu 付 Claude Max</span>

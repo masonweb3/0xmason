@@ -265,15 +265,33 @@ img { max-width: 100%; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
 .hero-stage { position: relative; height: 440px; }
 .hero-stage picture { display: contents; }
-.hero-card {
+/* U 卡: three real card faces fanned out, back to front */
+.hero-fan { position: absolute; left: 22%; top: 84px; width: 62%; aspect-ratio: 856 / 540; animation: float 6s var(--ease-float) infinite alternate; }
+.hero-fan img { position: absolute; inset: 0; width: 100%; height: auto; filter: drop-shadow(0 24px 24px var(--render-shadow)); }
+.hero-fan picture:nth-child(1) img { transform: translate(-8%, -22%) rotate(-12deg); }
+.hero-fan picture:nth-child(2) img { transform: translate(-2%, -13%) rotate(-5deg); }
+.hero-fan picture:nth-child(3) img { transform: translate(6%, 4%) rotate(3deg); }
+/* 全球账户 / eSIM: floating glass chips with app icons */
+.hero-chip {
   position: absolute;
-  left: 6%;
-  top: 0;
-  width: 90%;
-  height: auto;
-  filter: drop-shadow(0 40px 30px var(--render-shadow));
-  animation: float 6s var(--ease-float) infinite alternate;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px 12px 12px;
+  border-radius: var(--radius-md);
+  background: var(--material-bar);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: var(--shadow-float), var(--shadow-sm);
+  animation: float 7s var(--ease-float) -2s infinite alternate;
 }
+.hero-fan + .hero-chip { top: 24px; left: 0; }
+.hero-chip + .hero-chip { right: 0; bottom: 0; animation-duration: 8s; animation-delay: -5s; }
+.hero-chip-icons { display: flex; }
+.hero-chip-icons .brand-icon { width: 36px; height: 36px; box-shadow: 0 0 0 2px var(--surface); }
+.hero-chip-icons .brand-icon + .brand-icon { margin-left: -8px; }
+.hero-chip-copy { display: flex; flex-direction: column; color: var(--fg-secondary); font-size: 13px; line-height: 1.5; white-space: nowrap; }
+.hero-chip-copy strong { color: var(--fg); font-size: 15px; font-weight: 600; }
 .stat-chip {
   position: absolute;
   left: 0;
@@ -569,11 +587,16 @@ img { max-width: 100%; }
   .hero h1 { font-size: 40px; }
   .hero-stage { height: 340px; }
   .stat-figure { font-size: 48px; }
+  .stat-chip { max-width: 190px; }
   .offer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .esim-grid { grid-template-columns: 1fr; }
   .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 1099px) {
+  .hero-chip { gap: 8px; padding: 8px 12px 8px 8px; }
+  .hero-chip-icons .brand-icon { width: 28px; height: 28px; }
+  .hero-chip-copy { font-size: 12px; }
+  .hero-chip-copy strong { font-size: 14px; }
   /* 卡片速查: compact rows (render left, details right) below desktop */
   .offer-card { display: grid; grid-template-columns: 96px minmax(0, 1fr); column-gap: 16px; }
   .offer-card > * { grid-column: 2; }
@@ -610,9 +633,11 @@ img { max-width: 100%; }
   .hero-copy { gap: 16px; }
   .hero h1 { font-size: 34px; line-height: 1.25; }
   .primary-button, .secondary-button { padding: 0 22px; }
-  .hero-stage { height: 300px; }
-  .hero-card { left: auto; right: -12px; width: 330px; }
-  .stat-chip { bottom: 0; padding: 14px 16px; }
+  .hero-stage { height: 360px; }
+  .hero-fan { left: auto; right: 12px; top: 72px; width: 220px; }
+  .hero-fan + .hero-chip { top: 0; }
+  .hero-chip + .hero-chip { left: 0; right: auto; top: 204px; bottom: auto; }
+  .stat-chip { left: auto; right: 0; bottom: 0; padding: 14px 16px; }
   .stat-figure { font-size: 48px; }
   .marquee { -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
   .marquee ul { gap: 8px; padding-right: 8px; }
