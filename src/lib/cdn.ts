@@ -19,6 +19,10 @@ export function isWebPImage(url: string): boolean {
   return isCDNImage(url) && new URL(url).pathname.endsWith('.webp');
 }
 
+export function isCDNVideo(url: string): boolean {
+  return isCDNImage(url) && new URL(url).pathname.endsWith('.mp4');
+}
+
 export function cdnUrl(key: string) {
   const segments = key.split('/');
   if (segments.some((segment) => !segment || segment === '.' || segment === '..' || /[\\\x00-\x1f]/.test(segment))) {
