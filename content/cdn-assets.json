@@ -1483,5 +1483,16 @@
     "variants": [],
     "sourceSha256": "66c3a181b7888e2c2965a6ca3b762d33929072e72a7a17a6f7eebd1aa8ad9463",
     "compressionVersion": "webp-1"
+  },
+  "images/brands/app-tello.png": {
+    "key": "site/images/brands/app-tello.708f3216c2cc92e7-192w.webp",
+    "sha256": "708f3216c2cc92e75596ceda4880c105f9febab036fec47a1223aa33928f95ea",
+    "bytes": 2756,
+    "contentType": "image/webp",
+    "width": 192,
+    "height": 192,
+    "variants": [],
+    "sourceSha256": "8434533f75b91148e50e4d405cf8d8c1a6c8f8efa6d0c532d0fd008548434de0",
+    "compressionVersion": "webp-1"
   }
 }
