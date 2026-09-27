@@ -3,6 +3,7 @@ import { assetUrl } from './cdn';
 // Homepage quick-reference data. Promo terms change often: check the issuer's current rules before editing.
 // Checked 2026-09-25: Starryblu vouchers (blog.starryblu.com), Bybit EU flat 1% (2026-06-02 notice) and first-month
 // subscription campaign (listed until 2026-09-30); Gate 1% and MEXC 4% come from the site's own September articles.
+// Tello $5 / 30 days and roaming from China come from the site's 2026-09-26 article.
 export type Offer = {
   slug: string; name: string; brand: string; card: string; cardAlt: string; requirement: string; warn?: boolean;
   figure: string; figureNote: string; promo?: string; perk: string; code: string;
@@ -22,17 +23,18 @@ export const offers: Offer[] = [
 export const saily = { slug: 'saily', title: 'Saily 美国手机号', note: '开通、Apple Pay 扣款、号段查询与接码实测。', price: '$6.99', priceNote: '首年年付', code: '0XMASON' };
 
 export const brandNames: Record<string, string> = {
-  saily: 'Saily', xesim: 'Xesim', dito: 'DITO', maya: 'Maya', csl: 'CSL', '3hk': '3HK', clubsim: 'Club Sim', lebara: 'Lebara', o2: 'O2',
+  saily: 'Saily', tello: 'Tello', xesim: 'Xesim', dito: 'DITO', maya: 'Maya', csl: 'CSL', '3hk': '3HK', clubsim: 'Club Sim', lebara: 'Lebara', o2: 'O2',
 };
 
 export const esimGuides = [
+  { slug: 'tello', title: 'Tello 美国手机号', note: '月租 5 美元，Wi-Fi 通话收码，国内开漫游全流程。', brands: ['tello'] },
   { slug: 'xesim', title: 'Xesim X2 Pro', note: '国行 iPhone 写入 eSIM，香港 CSL、英国 Lebara、德国 O2 保号。', brands: ['xesim', 'csl', 'lebara', 'o2'] },
   { slug: 'dito-maya', title: 'DITO eSIM + Maya', note: '菲律宾号码充值保号，护照开 Maya 数字银行。', brands: ['dito', 'maya'] },
   { slug: 'hk-sim', title: '香港手机卡横评', note: 'CSL、3HK DIY、Clubsim 的费用、漫游和续期条件。', brands: ['csl', '3hk', 'clubsim'] },
 ];
 
 // Staggered three-column logo wall beside the eSIM list.
-export const esimWall = [['saily', '3hk', 'o2'], ['dito', 'maya', 'lebara'], ['xesim', 'clubsim', 'csl']];
+export const esimWall = [['saily', '3hk', 'o2'], ['dito', 'maya', 'lebara', 'tello'], ['xesim', 'clubsim', 'csl']];
 
 // Hero chips, one per brand kind. The brands themselves come from the CMS (品牌).
 export const heroGroups = [
