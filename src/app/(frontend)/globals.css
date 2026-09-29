@@ -636,8 +636,8 @@ img { max-width: 100%; }
 
   /* eSIM 速查 */
   .esim-grid { grid-template-columns: 1fr; gap: 24px; }
-  .logo-wall { gap: 12px; height: 168px; padding: 0 12px; }
-  .logo-wall .brand-icon { width: 48px; height: 48px; box-shadow: 0 0 0 1px var(--icon-ring), 0 12px 20px -12px var(--render-shadow); }
+  .logo-wall { gap: 8px; height: 168px; padding: 0 12px; }
+  .logo-wall .brand-icon { width: 42px; height: 42px; box-shadow: 0 0 0 1px var(--icon-ring), 0 12px 20px -12px var(--render-shadow); }
   .esim-featured { padding-bottom: 20px; }
   .esim-featured .brand-icon, .esim-logos .brand-icon { width: 24px; height: 24px; }
   .esim-featured-main { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
