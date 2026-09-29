@@ -1494,5 +1494,16 @@
     "variants": [],
     "sourceSha256": "8434533f75b91148e50e4d405cf8d8c1a6c8f8efa6d0c532d0fd008548434de0",
     "compressionVersion": "webp-1"
+  },
+  "images/brands/app-lyca.png": {
+    "key": "site/images/brands/app-lyca.da9416b224e2923b-192w.webp",
+    "sha256": "da9416b224e2923bea226c82667e8d809d8b8f3cbcfc73c16c04b1dc79520ba1",
+    "bytes": 1906,
+    "contentType": "image/webp",
+    "width": 192,
+    "height": 192,
+    "variants": [],
+    "sourceSha256": "29653a32993aa9067a71a06744763890da18bccee0668eb138bff7d9e50987dc",
+    "compressionVersion": "webp-1"
   }
 }
