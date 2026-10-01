@@ -198,6 +198,9 @@ export interface Category {
   id: number;
   title: string;
   slug: 'global-accounts' | 'esim' | 'ai-reviews';
+  /**
+   * 接在分类名后作为搜索标题，例如「账户与支付：银行卡、全球账户与 AI 订阅」
+   */
   summary: string;
   description: string;
   sortOrder: number;
@@ -239,6 +242,7 @@ export interface Media {
   alt: string;
   caption?: string | null;
   prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -317,6 +321,7 @@ export interface User {
   resetPasswordExpiration?: string | null;
   salt?: string | null;
   hash?: string | null;
+  resetPasswordRequestedAt?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
   sessions?:
@@ -481,6 +486,7 @@ export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   caption?: T;
   prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -564,6 +570,7 @@ export interface UsersSelect<T extends boolean = true> {
   resetPasswordExpiration?: T;
   salt?: T;
   hash?: T;
+  resetPasswordRequestedAt?: T;
   loginAttempts?: T;
   lockUntil?: T;
   sessions?:
