@@ -1,0 +1,29 @@
+name: 内容反馈 / Content report
+description: 信息过时、链接失效或邀请码不能用 / Outdated info, a broken link or an invite code that no longer works
+title: "[内容] "
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型 / Type
+      options:
+        - 信息过时 / Outdated info
+        - 链接失效 / Broken link
+        - 邀请码不能用 / Invite code not working
+        - 其他 / Other
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 页面链接 / Page URL
+      placeholder: https://0xmason.com/...
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: 具体情况 / Details
+      description: 哪里不对、你看到的实际情况和日期。截图请先遮住卡号、证件号、手机号等个人信息。 / What is wrong, what you saw and when. Blur card, ID and phone numbers in screenshots.
+    validations:
+      required: true

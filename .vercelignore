@@ -5,5 +5,5 @@ qa/
 coverage/
 .env*
 *.tsbuildinfo
-README.md
+README*.md
 LICENSE
