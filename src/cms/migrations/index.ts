@@ -5,6 +5,7 @@ import * as migration_20260910_000000_private_cms_access from './20260910_000000
 import * as migration_20260925_120000_ai_reviews_category from './20260925_120000_ai_reviews_category';
 import * as migration_20260925_141228_brands from './20260925_141228_brands';
 import * as migration_20261001_190448_reset_password_requested_at from './20261001_190448_reset_password_requested_at';
+import * as migration_20261003_145001_network_category from './20261003_145001_network_category';
 
 export const migrations = [
   {
@@ -40,6 +41,11 @@ export const migrations = [
   {
     up: migration_20261001_190448_reset_password_requested_at.up,
     down: migration_20261001_190448_reset_password_requested_at.down,
-    name: '20261001_190448_reset_password_requested_at'
+    name: '20261001_190448_reset_password_requested_at',
+  },
+  {
+    up: migration_20261003_145001_network_category.up,
+    down: migration_20261003_145001_network_category.down,
+    name: '20261003_145001_network_category'
   },
 ];

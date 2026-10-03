@@ -1505,5 +1505,27 @@
     "variants": [],
     "sourceSha256": "29653a32993aa9067a71a06744763890da18bccee0668eb138bff7d9e50987dc",
     "compressionVersion": "webp-1"
+  },
+  "images/brands/app-surge.png": {
+    "key": "site/images/brands/app-surge.328a32cb73ba9608-192w.webp",
+    "sha256": "328a32cb73ba960867df27fed3583d740472bb755efa953971f5de5a765ad37d",
+    "bytes": 1446,
+    "contentType": "image/webp",
+    "width": 192,
+    "height": 192,
+    "variants": [],
+    "sourceSha256": "11e15a10e2d9f19fffaafb43489ecab4e4ed715d760f4dc93da2e5d1002cfeba",
+    "compressionVersion": "webp-1"
+  },
+  "images/brands/app-stash.png": {
+    "key": "site/images/brands/app-stash.f99d9fb23376f914-192w.webp",
+    "sha256": "f99d9fb23376f914b33961f2ff914043d4b6022f49eece01000751edcfb56277",
+    "bytes": 3442,
+    "contentType": "image/webp",
+    "width": 192,
+    "height": 192,
+    "variants": [],
+    "sourceSha256": "836a46a41b17c1b95c3737c7c8474ec1640231e080a8ae33fff6fb37a5abd3ae",
+    "compressionVersion": "webp-1"
   }
 }

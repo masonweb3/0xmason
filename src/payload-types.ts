@@ -197,7 +197,7 @@ export interface Article {
 export interface Category {
   id: number;
   title: string;
-  slug: 'global-accounts' | 'esim' | 'ai-reviews';
+  slug: 'global-accounts' | 'esim' | 'ai-reviews' | 'network';
   /**
    * 接在分类名后作为搜索标题，例如「账户与支付：银行卡、全球账户与 AI 订阅」
    */
