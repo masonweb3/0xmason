@@ -6,7 +6,7 @@ import { CategoryArtwork } from "@/components/category-artwork";
 import { breadcrumbs, pageMetadata } from "@/lib/site";
 import { StructuredData } from "@/components/structured-data";
 
-export const metadata: Metadata = pageMetadata({ title: "精选资源", description: "Mason 的账户与支付、eSIM 保号和 AI 测评记录。按主题浏览银行卡、全球账户、AI 订阅和海外号码的文章。", path: "/resources" });
+export const metadata: Metadata = pageMetadata({ title: "精选资源", description: "Mason 的账户与支付、eSIM 保号、AI 测评和网络工具记录。按主题浏览银行卡、全球账户、AI 订阅、海外号码和代理网关的文章。", path: "/resources" });
 
 export default async function ResourcesPage() {
   const [categories, articles] = await Promise.all([getCategories(), getResources()]);

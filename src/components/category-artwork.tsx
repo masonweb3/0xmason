@@ -6,6 +6,7 @@ import { brandIcon, cardImage } from '@/lib/offers';
 const icons: Partial<Record<CategorySlug, string[]>> = {
   esim: ['saily', 'xesim', 'dito', 'csl'],
   'ai-reviews': ['claude', 'chatgpt'],
+  network: ['surge', 'stash'],
 };
 
 export function CategoryArtwork({ category }: { category: CategorySlug }) {
