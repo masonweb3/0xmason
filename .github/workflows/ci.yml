@@ -44,7 +44,7 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
-      - run: npm audit --audit-level=high
+      - run: node scripts/check-audit.mjs
       - name: Migrate disposable PostgreSQL
         run: node scripts/with-ci-env.mjs npm run cms:migrate
       - name: Verify CMS access and publishing
