@@ -28,6 +28,7 @@ export const brandNames: Record<string, string> = {
 };
 
 export const esimGuides = [
+  { slug: 'lebara', title: 'Lebara 英国手机号', note: '英国 07 实体号，国内开卡、激活、关续费与 90 天短信保号。', brands: ['lebara'] },
   { slug: 'lyca', title: 'Lyca 英国手机号', note: '英国 07 实体号跑 EE 网，国内扫码开通、关续费与 120 天保号。', brands: ['lyca'] },
   { slug: 'tello', title: 'Tello 美国手机号', note: '月租 5 美元，Wi-Fi 通话收码，国内开漫游全流程。', brands: ['tello'] },
   { slug: 'xesim', title: 'Xesim X2 Pro', note: '国行 iPhone 写入 eSIM，香港 CSL、英国 Lebara、德国 O2 保号。', brands: ['xesim', 'csl', 'lebara', 'o2'] },
