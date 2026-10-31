@@ -105,6 +105,11 @@ try {
   await page(`${moved}-renamed`, '', 404);
   assert.ok(!(await page('/feed.xml', '')).includes(slug));
   console.log('PASS media/category/link invalidation, timed link expiry, slug changes and deletion');
+  const richtext = (await api('articles', 'POST', { title: 'Rich text cache check', slug: `${slug}-richtext`, category: destination.id, summary: 'Rich text summary', bodyFormat: 'richtext', body: { root: { type: 'root', version: 1, format: '', indent: 0, direction: null, children: [{ type: 'paragraph', version: 1, format: '', indent: 0, direction: null, children: [{ type: 'text', version: 1, text: 'RICH TEXT CACHE BODY', format: 0, detail: 0, mode: 'normal', style: '' }] }] } }, _status: 'published' })).doc;
+  await page(`/resources/esim/${slug}-richtext`, 'RICH TEXT CACHE BODY');
+  await page('/resources/esim', 'Rich text cache check');
+  await api(`articles/${richtext.id}`, 'DELETE');
+  console.log('PASS rich text publication, rendering and category summaries after dependency patches');
 } finally {
   if (server.exitCode === null) await new Promise<void>((resolve) => { server.once('exit', () => resolve()); server.kill('SIGTERM'); });
   await db.end();
