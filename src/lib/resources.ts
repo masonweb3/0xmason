@@ -41,7 +41,7 @@ export const getCategories = cache(unstable_cache(async (): Promise<Category[]> 
   const payload = await cms();
   const result = await payload.find({ collection: 'categories', sort: 'sortOrder', pagination: false, depth: 0, overrideAccess: false });
   return result.docs.map(({ slug, title, summary, description }) => ({ slug, title, summary, description }));
-}, ['cms-categories-v1'], publicContentCache));
+}, ['0xmason-categories-v1'], publicContentCache));
 
 async function mapArticles(documents: Article[]): Promise<Resource[]> {
   if (!documents.length) return [];
@@ -80,12 +80,12 @@ export const getResources = cache(unstable_cache(async (): Promise<ResourceSumma
   const payload = await cms();
   const result = await payload.find({ collection: 'articles', select: summarySelect, where: published, draft: false, depth: 1, pagination: false, sort: '-updatedAt', overrideAccess: false, joins: false });
   return result.docs.flatMap((article) => resourceSummary(article) || []);
-}, ['cms-resource-summaries-v1'], publicContentCache));
+}, ['0xmason-resource-summaries-v1'], publicContentCache));
 
 const getBrands = unstable_cache(async () => {
   const payload = await cms();
   return (await payload.find({ collection: 'brands', sort: '-createdAt', pagination: false, depth: 1, populate: { articles: { slug: true } }, overrideAccess: true })).docs;
-}, ['cms-brands-v1'], publicContentCache);
+}, ['0xmason-brands-v1'], publicContentCache);
 // Newest first. A failed query yields no brands so the homepage still renders between a deploy and its brands migration.
 export const getHeroBrands = cache(async (): Promise<HeroBrand[]> => {
   try {
@@ -107,13 +107,13 @@ export const getCategoryResources = cache(unstable_cache(async (category: Catego
     const summary = resourceSummary(article);
     return summary ? [{ ...summary, readingMinutes: parseArticleContent(article.bodyFormat === 'markdown' ? article.markdown || '' : nodeText(article.body?.root || {})).readingMinutes }] : [];
   });
-}, ['cms-category-resources-v1'], publicContentCache));
+}, ['0xmason-category-resources-v1'], publicContentCache));
 
 const getPublishedResource = unstable_cache(async (slug: string) => {
   const payload = await cms();
   const result = await payload.find({ collection: 'articles', where: { and: [published, { slug: { equals: slug } }] }, draft: false, depth: 2, limit: 1, overrideAccess: false, joins: false });
   return (await mapArticles(result.docs))[0] || null;
-}, ['cms-resource-v1'], publicContentCache);
+}, ['0xmason-resource-v1'], publicContentCache);
 
 export const getResource = cache(async (category: string, slug: string) => {
   const resource = await getPublishedResource(slug);

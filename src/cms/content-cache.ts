@@ -1,6 +1,6 @@
 import { revalidateTag } from 'next/cache';
 
-export const publicContentCache = { tags: ['cms-public-content-v1'], revalidate: 300 };
+export const publicContentCache = { tags: ['0xmason-public-content-v1'], revalidate: 300 };
 
 export function refreshPublicContent() {
   // CLI migrations have no Next request; HTTP mutations flush tags after the transaction commits.

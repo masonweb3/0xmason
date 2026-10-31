@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { randomBytes } from 'node:crypto';
 import { spawn } from 'node:child_process';
+import { rm } from 'node:fs/promises';
 import { setTimeout } from 'node:timers/promises';
 import { Client } from 'pg';
 import { getPayload } from 'payload';
@@ -114,5 +115,7 @@ try {
   if (server.exitCode === null) await new Promise<void>((resolve) => { server.once('exit', () => resolve()); server.kill('SIGTERM'); });
   await db.end();
   await payload.destroy();
+  // Local tag invalidations are in memory; keep fixture cache files out of the next test server.
+  await rm('.next/cache/fetch-cache', { recursive: true, force: true });
 }
 process.exit(0);
