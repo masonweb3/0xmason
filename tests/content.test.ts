@@ -1,8 +1,13 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { parseArticleContent, headingId } from '../src/lib/article-content';
+import { articleMediaReferences, parseArticleContent, headingId } from '../src/lib/article-content';
 import { cdnUrl, isWebPImage, mediaUrl } from '../src/lib/cdn';
 import { validateHTTPS, validateSlug } from '../src/cms/access';
+
+test('article media lookup selects mapped IDs and direct CDN filenames without loading the library', () => {
+  assert.deepEqual(articleMediaReferences('![direct](https://cdn.0xmason.com/media/a%20b.webp)\n![reference][photo]\n\n[photo]: https://cdn.0xmason.com/media/c.webp\n\n![invalid](https://cdn.0xmason.com/media/%XX.webp)\n![parentheses](<https://cdn.0xmason.com/media/a(b).webp>)', { old: { mediaId: 12 }, duplicate: { mediaId: 12 }, legacy: {}, invalid: { mediaId: -1 } }), { ids: [12], filenames: ['a b.webp', 'c.webp', 'a(b).webp'] });
+  assert.deepEqual(articleMediaReferences('![foreign](https://example.com/a.webp)', {}), { ids: [], filenames: [] });
+});
 
 test('source title and cover appear once, and heading hierarchy remains navigable', () => {
   const source = '# 示例标题\n\n![封面](cover.png)\n\n## 开始使用\n\n正文\n\n### 第二步\n';

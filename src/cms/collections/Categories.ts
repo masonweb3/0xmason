@@ -1,11 +1,13 @@
 import type { CollectionConfig } from 'payload';
 import { isAdmin } from '../access';
+import { refreshPublicContent } from '../content-cache';
 
 export const Categories: CollectionConfig = {
   slug: 'categories',
   labels: { singular: '分类', plural: '分类' },
   admin: { useAsTitle: 'title', defaultColumns: ['title', 'slug', 'sortOrder'], group: '内容' },
   access: { read: () => true, create: isAdmin, update: isAdmin, delete: () => false },
+  hooks: { afterChange: [refreshPublicContent] },
   fields: [
     { name: 'title', label: '分类名称', type: 'text', required: true },
     { name: 'slug', label: '分类路径', type: 'select', required: true, unique: true, options: [

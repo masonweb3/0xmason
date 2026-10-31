@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
-import { getCategory, getCategoryResources, getResource, getResources, resourceHref } from '@/lib/resources';
+import { getCategory, getResource, getResources, resourceHref } from '@/lib/resources';
 import { ArticleView } from '@/components/article-view';
 import { pageMetadata } from '@/lib/site';
 
@@ -25,6 +25,6 @@ export default async function ArticlePage({ params }: { params: Promise<PagePara
   const article = await findArticle(categorySlug, articleSlug);
   const category = await getCategory(article.category);
   if (!category) notFound();
-  const related = (await getCategoryResources(category.slug)).filter((item) => item.slug !== article.slug).slice(0, 3);
+  const related = (await getResources()).filter((item) => item.category === category.slug && item.slug !== article.slug).slice(0, 3);
   return <ArticleView article={article} category={category} related={related} />;
 }

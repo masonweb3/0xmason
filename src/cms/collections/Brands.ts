@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload';
 import { isAdmin } from '../access';
+import { refreshPublicContent } from '../content-cache';
 
 // The homepage hero is built from these: a brand shows once one of its articles is published.
 // Brands seeded by migration point at site assets (iconAsset / cardAsset) instead of media uploads.
@@ -13,6 +14,7 @@ export const Brands: CollectionConfig = {
   // Not public: the article list would reveal drafts. The homepage reads it server-side.
   access: { read: isAdmin, create: isAdmin, update: isAdmin, delete: isAdmin },
   defaultSort: '-createdAt',
+  hooks: { afterChange: [refreshPublicContent], afterDelete: [refreshPublicContent] },
   fields: [
     { type: 'row', fields: [
       { name: 'name', label: '名称', type: 'text', required: true, admin: { width: '50%' } },

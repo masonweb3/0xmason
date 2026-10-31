@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Warning } from "@phosphor-icons/react/dist/ssr";
 import { CDNImage as Image } from './cdn-image';
 import { CopyCode } from "./copy-code";
-import { resourceHref, type Resource } from "@/lib/resources";
+import { resourceHref, type ResourceSummary } from "@/lib/resources";
 import { brandIcon, cardImage, type Offer } from "@/lib/offers";
 
 export function BrandIcon({ name, size, alt = '' }: { name: string; size: number; alt?: string }) {
@@ -33,7 +33,7 @@ export function OfferCard({ offer }: { offer: Offer }) {
   );
 }
 
-export function PostCard({ post, category }: { post: Resource; category?: string }) {
+export function PostCard({ post, category }: { post: ResourceSummary; category?: string }) {
   return (
     <Link className="post-card" href={resourceHref(post)}>
       {post.cover && <Image src={post.cover.src} sources={post.cover.sources} width={post.cover.width} height={post.cover.height} alt="" sizes="(max-width: 767px) 112px, 384px" />}

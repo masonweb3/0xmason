@@ -42,7 +42,13 @@ CMS 集成测试需要一个可丢弃的本机 PostgreSQL 数据库：
 export CI_DATABASE_URL=postgresql://postgres:ci@127.0.0.1:5432/mason_cms_ci
 node scripts/with-ci-env.mjs npm run cms:migrate
 node scripts/with-ci-env.mjs npm run test:cms
+node scripts/with-ci-env.mjs npm run build
+node scripts/with-ci-env.mjs npm run test:cache
 ```
+
+公共文章、分类和品牌使用 Next.js 数据缓存，5 分钟后可自动重新验证。后台发布、取消发布、删除文章，以及修改分类、媒体或推荐链接时会立即使相关公共内容缓存失效；草稿预览不进入共享缓存。直接 SQL 或独立 CLI 写入不触发 Next.js 请求内的失效操作，需等缓存重新验证。
+
+`test:cache` 在隔离数据库上启动生产模式服务器，检查跨请求缓存、发布刷新、草稿预览、取消发布、图片、推荐链接到期和旧分类地址跳转。
 
 ## 复用本项目
 

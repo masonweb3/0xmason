@@ -1,3 +1,23 @@
+import { CDN_ORIGIN, MEDIA_PREFIX } from './cdn';
+import { fromMarkdown } from 'mdast-util-from-markdown';
+import type { Root, RootContent } from 'mdast';
+
+export function articleMediaReferences(markdown: string, images: Record<string, { mediaId?: number }>) {
+  const ids = [...new Set(Object.values(images).flatMap((image) => typeof image?.mediaId === 'number' && Number.isSafeInteger(image.mediaId) && image.mediaId > 0 ? [image.mediaId] : []))];
+  const filenames = new Set<string>();
+  function visit(node: Root | RootContent) {
+    if (node.type === 'image' || node.type === 'definition') {
+      try {
+        const parsed = new URL(node.url);
+        if (parsed.origin === CDN_ORIGIN && parsed.pathname.startsWith(`/${MEDIA_PREFIX}/`)) filenames.add(decodeURIComponent(parsed.pathname.slice(`/${MEDIA_PREFIX}/`.length)));
+      } catch { /* Malformed image URLs remain unresolved, as in the renderer. */ }
+    }
+    if ('children' in node) node.children.forEach(visit);
+  }
+  visit(fromMarkdown(markdown));
+  return { ids, filenames: [...filenames] };
+}
+
 export function headingId(text: string) {
   return text.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "");
 }

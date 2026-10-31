@@ -4,6 +4,7 @@ import { parse } from 'node:path';
 import { isAdmin } from '../access';
 import { MEDIA_PREFIX, mediaUrl } from '../../lib/cdn';
 import { compressImage, IMAGE_INPUT_OPTIONS, IMAGE_MAX_WIDTH, IMAGE_POLICY_VERSION, IMAGE_SIZES, WEBP_OPTIONS } from '../image-processing';
+import { refreshPublicContent } from '../content-cache';
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -28,6 +29,7 @@ export const Media: CollectionConfig = {
     })),
   },
   hooks: {
+    afterChange: [refreshPublicContent],
     beforeOperation: [({ args, operation, req }) => {
       if ((operation === 'create' || operation === 'update') && req.file?.data) {
         const { name, ext } = parse(req.file.name);

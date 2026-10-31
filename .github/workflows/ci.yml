@@ -53,6 +53,8 @@ jobs:
         run: node scripts/with-ci-env.mjs npm run cms:migrate
       - name: Production build with isolated configuration
         run: node scripts/with-ci-env.mjs npm run build
+      - name: Verify content caching and publication invalidation over HTTP
+        run: node scripts/with-ci-env.mjs npm run test:cache
       - name: Verify rendered SEO and preview indexing boundaries
         run: |
           node scripts/with-ci-env.mjs npm start -- --port 3100 > "$RUNNER_TEMP/seo-server.log" 2>&1 &
