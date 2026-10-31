@@ -8,12 +8,12 @@ import { PostCard } from './cards';
 import { CopyCode } from './copy-code';
 import { StructuredData } from './structured-data';
 import { parseArticleContent } from '@/lib/article-content';
-import { resourceHref, type Category, type Resource } from '@/lib/resources';
+import { resourceHref, type Category, type Resource, type ResourceSummary } from '@/lib/resources';
 import { absoluteUrl, author, breadcrumbs } from '@/lib/site';
 import { assetUrl } from '@/lib/cdn';
 import { offers } from '@/lib/offers';
 
-export function ArticleView({ article, category, related = [], preview = false }: { article: Resource; category: Category; related?: Resource[]; preview?: boolean }) {
+export function ArticleView({ article, category, related = [], preview = false }: { article: Resource; category: Category; related?: ResourceSummary[]; preview?: boolean }) {
   const directoryHref = `/resources/${category.slug}`;
   const content = parseArticleContent(article.bodyFormat === 'markdown' ? article.markdown : nodeText(article.body?.root || {}));
   const headings = article.bodyFormat === 'markdown' ? content.headings : richTextHeadings(article.body);

@@ -42,7 +42,13 @@ CMS integration tests need a disposable local PostgreSQL database:
 export CI_DATABASE_URL=postgresql://postgres:ci@127.0.0.1:5432/mason_cms_ci
 node scripts/with-ci-env.mjs npm run cms:migrate
 node scripts/with-ci-env.mjs npm run test:cms
+node scripts/with-ci-env.mjs npm run build
+node scripts/with-ci-env.mjs npm run test:cache
 ```
+
+Public articles, categories and brands use the Next.js data cache with a five-minute revalidation interval. CMS article publication, unpublication and deletion, along with category, media and affiliate-link changes, immediately invalidate public content. Draft previews bypass the shared cache. Direct SQL or standalone CLI writes take effect when the cache next revalidates.
+
+`test:cache` starts a production-mode server against the disposable database and verifies caching across requests, publishing, private previews, unpublishing, images, link expiry and category redirects.
 
 ## Reusing this project
 

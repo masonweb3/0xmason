@@ -25,6 +25,7 @@
     "cms:admin": "tsx scripts/cms-admin.ts",
     "test": "tsx --test tests/*.test.ts",
     "test:cms": "tsx scripts/verify-cms.ts",
+    "test:cache": "tsx scripts/verify-content-cache.ts",
     "check:privacy": "node scripts/check-public-files.mjs",
     "check:images": "node scripts/check-image-storage.mjs",
     "check:seo": "python3 scripts/check-seo.py"

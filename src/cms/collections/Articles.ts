@@ -1,6 +1,7 @@
 import { APIError, type CollectionConfig } from 'payload';
 import { isAdmin, readPublished, validateSlug } from '../access';
 import { submitToIndexNow } from '../../lib/site';
+import { refreshPublicContent } from '../content-cache';
 
 function hasContent(value: unknown): boolean {
   if (!value || typeof value !== 'object') return false;
@@ -25,11 +26,11 @@ export const Articles: CollectionConfig = {
       if (next.bodyFormat === 'richtext' && !hasContent(next.body)) throw new APIError('发布前请填写正文', 400);
     }
     return data;
-  }], afterChange: [async ({ doc, req }) => {
+  }], afterChange: [refreshPublicContent, async ({ doc, req }) => {
     if (doc._status !== 'published') return;
     const category = typeof doc.category === 'object' ? doc.category : await req.payload.findByID({ collection: 'categories', id: doc.category, depth: 0, req });
     await submitToIndexNow([`/resources/${category.slug}/${doc.slug}`, `/resources/${category.slug}`, '/']);
-  }] },
+  }], afterDelete: [refreshPublicContent] },
   fields: [
     { name: 'title', label: '标题', type: 'text', required: true },
     { type: 'row', fields: [

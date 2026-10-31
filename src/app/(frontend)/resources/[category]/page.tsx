@@ -5,8 +5,6 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { getCategories, categoryCount, getCategory, getCategoryResources, resourceHref } from "@/lib/resources";
 import { CDNImage } from "@/components/cdn-image";
 import { CategoryArtwork } from "@/components/category-artwork";
-import { parseArticleContent } from "@/lib/article-content";
-import { nodeText } from "@/components/article-richtext";
 import { breadcrumbs, pageMetadata } from "@/lib/site";
 import { StructuredData } from "@/components/structured-data";
 
@@ -45,7 +43,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         </div>
         <div className="article-list">
           {articles.length ? articles.map((article, index) => {
-            const { readingMinutes } = parseArticleContent(article.bodyFormat === 'markdown' ? article.markdown : nodeText(article.body?.root || {}));
+            const { readingMinutes } = article;
             return <Link className={`article-preview${article.cover ? '' : ' article-preview-text'}`} href={resourceHref(article)} key={article.slug}>
               {article.cover && <div className="article-preview-image"><CDNImage src={article.cover.src} sources={article.cover.sources} width={article.cover.width} height={article.cover.height} alt="" preload={index === 0} sizes="(max-width: 767px) 90vw, (max-width: 1100px) 40vw, 480px" /></div>}
               <div className="article-preview-copy">

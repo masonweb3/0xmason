@@ -1,11 +1,13 @@
 import type { CollectionConfig } from 'payload';
 import { isAdmin, validateHTTPS } from '../access';
+import { refreshPublicContent } from '../content-cache';
 
 export const AffiliateLinks: CollectionConfig = {
   slug: 'affiliate-links',
   labels: { singular: '推荐链接', plural: '推荐链接' },
   admin: { useAsTitle: 'name', group: '内容', defaultColumns: ['name', 'code', 'active', 'expiresAt'] },
   access: { read: isAdmin, create: isAdmin, update: isAdmin, delete: isAdmin },
+  hooks: { afterChange: [refreshPublicContent], afterDelete: [refreshPublicContent] },
   fields: [
     { name: 'name', label: '名称', type: 'text', required: true },
     { name: 'url', label: '链接', type: 'text', validate: validateHTTPS, required: true },
